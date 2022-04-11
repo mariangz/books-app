@@ -1,28 +1,47 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faFacebook,
+  faTwitter,
+  faYoutube,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
+
 export default function Footer() {
   return (
     <footer>
       <div>
-        <h6>Column One</h6>
-        <ul>
+        <h6>Logo</h6>
+        <ul className='list-icon'>
           <li>
-            <a>Consectetur</a>
+            <a>
+              <FontAwesomeIcon icon={faFacebook} />
+              <span className='media'>Facebook</span>
+            </a>
           </li>
           <li>
-            <a>Adipiscing</a>
+            <a>
+              <FontAwesomeIcon icon={faTwitter} />
+              <span className='media'>Twitter</span>
+            </a>
           </li>
           <li>
-            <a>Excepteur</a>
+            <a>
+              <FontAwesomeIcon icon={faYoutube} />
+              <span className='media'>Youtube</span>
+            </a>
           </li>
           <li>
-            <a>lorem</a>
+            <a>
+              {' '}
+              <FontAwesomeIcon icon={faInstagram} />
+              <span className='media'>Instagram</span>
+            </a>
           </li>
-          <li>
-            <a>Reprehenderit</a>
-          </li>
+          <li></li>
         </ul>
       </div>
       <div>
-        <h6>Column Two</h6>
+        <h6>About</h6>
         <ul>
           <li>
             <a>Pariatur</a>
@@ -42,7 +61,7 @@ export default function Footer() {
         </ul>
       </div>
       <div>
-        <h6>Column Three</h6>
+        <h6>Support</h6>
         <ul>
           <li>
             <a>Proident</a>
@@ -58,26 +77,6 @@ export default function Footer() {
           </li>
           <li>
             <a>Adipiscing elit</a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h6>Column Four</h6>
-        <ul>
-          <li>
-            <a>Lacus</a>
-          </li>
-          <li>
-            <a>Venenatis</a>
-          </li>
-          <li>
-            <a>Aliquet</a>
-          </li>
-          <li>
-            <a>Volutpat</a>
-          </li>
-          <li>
-            <a>Fames</a>
           </li>
         </ul>
       </div>
