@@ -50,6 +50,24 @@ export default function Form() {
           value=''
         />
       </div>
+      <div>
+        <label for='checkbox'>Terms and Conditions:</label>
+        <input type='checkbox' id='terms' name='checkbox' />
+        <span>I have read and agree to the Terms and Conditions</span>
+      </div>
+
+      <fieldset>
+        <legend>Are you...</legend>
+        <input type='radio' />
+        <label>Reader</label>
+        <br />
+        <input type='radio' />
+        <label>Writer</label>
+        <br />
+        <input type='radio' />
+        <label>Both</label>
+        <br />
+      </fieldset>
     </form>
   );
 }
