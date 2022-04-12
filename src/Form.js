@@ -32,6 +32,24 @@ export default function Form() {
           value=''
         />
       </div>
+      <div className='password'>
+        <label for='password'>Password:</label>
+        <input
+          type='password'
+          name='password'
+          placeholder='Enter your password'
+          value=''
+        />
+      </div>
+      <div className='confirmPassword'>
+        <label for='confirmPassword'>Confirm Password:</label>
+        <input
+          type='password'
+          name='confirmPassword'
+          placeholder='Enter your password'
+          value=''
+        />
+      </div>
     </form>
   );
 }
