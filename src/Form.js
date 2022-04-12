@@ -23,6 +23,15 @@ export default function Form() {
           value=''
         />
       </div>
+      <div className='email'>
+        <label for='email'>Email:</label>
+        <input
+          type='email'
+          name='email'
+          placeholder='Enter your name'
+          value=''
+        />
+      </div>
     </form>
   );
 }
