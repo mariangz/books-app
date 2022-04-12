@@ -13,6 +13,16 @@ export default function Form() {
           value=''
         />
       </div>
+      <div className='surname'>
+        <label for='surname'>Surname:</label>
+        <input
+          id='surname'
+          type='text'
+          name='surname'
+          placeholder='Enter your surname'
+          value=''
+        />
+      </div>
     </form>
   );
 }
