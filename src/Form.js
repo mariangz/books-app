@@ -1,6 +1,15 @@
 import { useState } from 'react';
 
 export default function Form() {
+  const [data, setData] = useState({
+    name: '',
+    surname: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    terms: '',
+    user: '',
+  });
   return (
     <form>
       <div className='name'>
