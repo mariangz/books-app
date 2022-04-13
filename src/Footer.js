@@ -1,10 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebook,
-  faTwitter,
-  faYoutube,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
+import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 export default function Footer() {
   return (
@@ -14,26 +9,25 @@ export default function Footer() {
         <ul className='list-icon'>
           <li>
             <a>
-              <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={brands('facebook')} />
               <span className='media'>Facebook</span>
             </a>
           </li>
           <li>
             <a>
-              <FontAwesomeIcon icon={faTwitter} />
+              <FontAwesomeIcon icon={brands('twitter')} />
               <span className='media'>Twitter</span>
             </a>
           </li>
           <li>
             <a>
-              <FontAwesomeIcon icon={faYoutube} />
+              <FontAwesomeIcon icon={brands('youtube')} />
               <span className='media'>Youtube</span>
             </a>
           </li>
           <li>
             <a>
-              {' '}
-              <FontAwesomeIcon icon={faInstagram} />
+              <FontAwesomeIcon icon={brands('instagram')} />
               <span className='media'>Instagram</span>
             </a>
           </li>
