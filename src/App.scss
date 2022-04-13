@@ -1,10 +1,10 @@
-:root {
-  --color-blue: #03314B;
-  --color-grey: #6D787E;
-  --color-accent: #2ce080;
-}
+$color-blue: #03314b;
+$color-grey: #6d787e;
+$color-accent: #2ce080;
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -17,7 +17,7 @@ a {
 }
 
 h6 {
-  color: var(--color-blue);
+  color: $color-blue;
   font-size: 1rem;
   margin: 0;
 }
@@ -30,7 +30,7 @@ div {
 
 footer {
   display: grid;
-  font-size: 0.875rem;;
+  font-size: 0.875rem;
   gap: 3rem 4rem;
   grid-template-columns: repeat(1, 1fr);
   letter-spacing: 0.1em;
@@ -52,9 +52,9 @@ ul {
   list-style: none;
   padding: 0;
 }
- 
+
 footer a {
-  color: var(--color-grey);
+  color: $color-grey;
   display: block;
   font-weight: 300;
   transition: all 200ms ease-out;
@@ -76,8 +76,7 @@ footer h6::before {
   width: 3rem;
   height: 5px;
   bottom: -10px;
-  background-color: #2ce080;
-  
+  background-color: $color-accent;
 }
 
 .list-icon {
@@ -102,13 +101,12 @@ a:hover {
 
   footer {
     grid-template-columns: repeat(3, 1fr);
-
   }
 
   footer div:first-child {
     flex-direction: column;
     justify-content: flex-start;
-    align-items: start
+    align-items: start;
   }
 
   .list-icon {
@@ -119,5 +117,4 @@ a:hover {
     display: inline-block;
     margin-left: 1rem;
   }
-
 }
