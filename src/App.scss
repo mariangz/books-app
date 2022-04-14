@@ -5,6 +5,7 @@ $color-grey: #282828;
 $color-accent: #2ce080;
 $font-main: 'Sora', sans-serif;
 $font-size-min: 14px;
+$font-size-medium: 15px;
 $font-size-max: 16px;
 
 *,
@@ -87,6 +88,10 @@ ul {
 
 /* Media Queries */
 @media (min-width: $breakpoint-tablet) {
+  * {
+    font-size: $font-size-medium;
+  }
+
   footer {
     grid-template-columns: repeat(4, 1fr);
 
