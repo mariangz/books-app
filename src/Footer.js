@@ -5,37 +5,37 @@ export default function Footer() {
   return (
     <footer>
       <div>
-        <h6>Logo</h6>
-        <ul className='list-icon'>
+        <h6 className='title'>Logo</h6>
+        <ul>
           <li>
             <a>
               <FontAwesomeIcon icon={brands('facebook')} />
-              <span className='media'>Facebook</span>
+              <span>Facebook</span>
             </a>
           </li>
           <li>
             <a>
               <FontAwesomeIcon icon={brands('twitter')} />
-              <span className='media'>Twitter</span>
+              <span>Twitter</span>
             </a>
           </li>
           <li>
             <a>
               <FontAwesomeIcon icon={brands('youtube')} />
-              <span className='media'>Youtube</span>
+              <span>Youtube</span>
             </a>
           </li>
           <li>
             <a>
               <FontAwesomeIcon icon={brands('instagram')} />
-              <span className='media'>Instagram</span>
+              <span>Instagram</span>
             </a>
           </li>
           <li></li>
         </ul>
       </div>
       <div>
-        <h6>Use Cases</h6>
+        <h6 className='title'>Use Cases</h6>
         <ul>
           <li>
             <a>UI design</a>
@@ -70,7 +70,7 @@ export default function Footer() {
         </ul>
       </div>
       <div>
-        <h6>Explore</h6>
+        <h6 className='title'>Explore</h6>
         <ul>
           <li>
             <a>Design features</a>
@@ -79,7 +79,7 @@ export default function Footer() {
             <a>Prototyping features</a>
           </li>
           <li>
-            <a>Design systems features</a>
+            <a>Design systems</a>
           </li>
           <li>
             <a>Collaboration features</a>
@@ -111,7 +111,7 @@ export default function Footer() {
         </ul>
       </div>
       <div>
-        <h6>Resources</h6>
+        <h6 className='title'>Resources</h6>
         <ul>
           <li>
             <a>Blog</a>
@@ -155,7 +155,7 @@ export default function Footer() {
         </ul>
       </div>
       <div>
-        <h6>Compare</h6>
+        <h6 className='title'>Compare</h6>
         <ul>
           <li>
             <a>Sketch</a>
