@@ -1,14 +1,19 @@
 $breakpoint-tablet: 768px;
 $breakpoint-laptop: 1024px;
 $color-blue: #03314b;
-$color-grey: #6d787e;
+$color-grey: #282828;
 $color-accent: #2ce080;
 $font-main: 'Sora', sans-serif;
+$font-size-min: 14px;
+$font-size-max: 16px;
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: $font-size-min;
 }
 
 body {
@@ -17,10 +22,8 @@ body {
 
 .container {
   display: grid;
-  justify-content: center;
   max-width: 1200px;
   min-width: 100%;
-  padding: 1.4rem;
 }
 
 a {
@@ -29,17 +32,16 @@ a {
 
 footer {
   display: grid;
-  font-size: 0.75em;
-  gap: 2rem 2rem;
-  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem 3rem;
+  grid-template-columns: 1fr;
   line-height: 1.7;
   max-width: 1200px;
+  padding: 1.5rem;
 
   .title {
     color: $color-blue;
-    font-size: 0.8rem;
-    margin: 0;
-    padding: 0;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
   }
 
   ul {
@@ -49,6 +51,7 @@ footer {
   a {
     color: $color-grey;
     display: block;
+    font-size: 0.8rem;
     font-weight: 300;
   }
 
@@ -80,7 +83,6 @@ ul {
   display: grid;
   gap: 1rem;
   list-style: none;
-  padding: 0;
 }
 
 /* Media Queries */
@@ -92,6 +94,7 @@ ul {
       grid-column: 1/-1;
       span {
         display: inline-block;
+        font-size: 0.8rem;
         padding-left: 10px;
       }
     }
@@ -107,6 +110,9 @@ ul {
 }
 
 @media (min-width: $breakpoint-laptop) {
+  * {
+    font-size: $font-size-max;
+  }
   footer {
     gap: 3rem 2.3rem;
     grid-template-columns: repeat(5, 1fr);
@@ -120,5 +126,9 @@ ul {
         flex-direction: column;
       }
     }
+  }
+
+  .container {
+    justify-content: center;
   }
 }
