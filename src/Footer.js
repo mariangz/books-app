@@ -3,30 +3,30 @@ import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 export default function Footer() {
   return (
-    <footer>
-      <div>
-        <h6 className='title'>Logo</h6>
+    <footer className='footer'>
+      <div className='footer__section'>
+        <h6 className='footer__title'>Logo</h6>
         <ul>
           <li>
-            <a>
+            <a className='footer__link'>
               <FontAwesomeIcon icon={brands('facebook')} />
               <span>Facebook</span>
             </a>
           </li>
           <li>
-            <a>
+            <a className='footer__link'>
               <FontAwesomeIcon icon={brands('twitter')} />
               <span>Twitter</span>
             </a>
           </li>
           <li>
-            <a>
+            <a className='footer__link'>
               <FontAwesomeIcon icon={brands('youtube')} />
               <span>Youtube</span>
             </a>
           </li>
           <li>
-            <a>
+            <a className='footer__link'>
               <FontAwesomeIcon icon={brands('instagram')} />
               <span>Instagram</span>
             </a>
@@ -34,151 +34,151 @@ export default function Footer() {
           <li></li>
         </ul>
       </div>
-      <div>
-        <h6 className='title'>Use Cases</h6>
+      <div className='footer__section'>
+        <h6 className='footer__title'>Use Cases</h6>
         <ul>
           <li>
-            <a>UI design</a>
+            <a className='footer__link'>UI design</a>
           </li>
           <li>
-            <a>UX design</a>
+            <a className='footer__link'>UX design</a>
           </li>
           <li>
-            <a>Graphic design</a>
+            <a className='footer__link'>Graphic design</a>
           </li>
           <li>
-            <a>Wireframing</a>
+            <a className='footer__link'>Wireframing</a>
           </li>
           <li>
-            <a>Diagramming</a>
+            <a className='footer__link'>Diagramming</a>
           </li>
           <li>
-            <a>Brainstorming</a>
+            <a className='footer__link'>Brainstorming</a>
           </li>
           <li>
-            <a>Templates</a>
+            <a className='footer__link'>Templates</a>
           </li>
           <li>
-            <a>Remote design</a>
+            <a className='footer__link'>Remote design</a>
           </li>
           <li>
-            <a>Agencies</a>
+            <a className='footer__link'>Agencies</a>
           </li>
           <li>
-            <a>Figma for education</a>
+            <a className='footer__link'>Figma for education</a>
           </li>
         </ul>
       </div>
-      <div>
-        <h6 className='title'>Explore</h6>
+      <div className='footer__section'>
+        <h6 className='footer__title'>Explore</h6>
         <ul>
           <li>
-            <a>Design features</a>
+            <a className='footer__link'>Design features</a>
           </li>
           <li>
-            <a>Prototyping features</a>
+            <a className='footer__link'>Prototyping features</a>
           </li>
           <li>
-            <a>Design systems</a>
+            <a className='footer__link'>Design systems</a>
           </li>
           <li>
-            <a>Collaboration features</a>
+            <a className='footer__link'>Collaboration features</a>
           </li>
           <li>
-            <a>Design process</a>
+            <a className='footer__link'>Design process</a>
           </li>
           <li>
-            <a>FigJam</a>
+            <a className='footer__link'>FigJam</a>
           </li>
           <li>
-            <a>Pricing</a>
+            <a className='footer__link'>Pricing</a>
           </li>
           <li>
-            <a>Enterprise</a>
+            <a className='footer__link'>Enterprise</a>
           </li>
           <li>
-            <a>Customers</a>
+            <a className='footer__link'>Customers</a>
           </li>
           <li>
-            <a>Security</a>
+            <a className='footer__link'>Security</a>
           </li>
           <li>
-            <a>Integrations</a>
+            <a className='footer__link'>Integrations</a>
           </li>
           <li>
-            <a>Contact</a>
+            <a className='footer__link'>Contact</a>
           </li>
         </ul>
       </div>
-      <div>
-        <h6 className='title'>Resources</h6>
+      <div className='footer__section'>
+        <h6 className='footer__title'>Resources</h6>
         <ul>
           <li>
-            <a>Blog</a>
+            <a className='footer__link'>Blog</a>
           </li>
           <li>
-            <a>Best practices</a>
+            <a className='footer__link'>Best practices</a>
           </li>
           <li>
-            <a>Support</a>
+            <a className='footer__link'>Support</a>
           </li>
           <li>
-            <a>Developers</a>
+            <a className='footer__link'>Developers</a>
           </li>
           <li>
-            <a>Learn design</a>
+            <a className='footer__link'>Learn design</a>
           </li>
           <li>
-            <a>Downloads</a>
+            <a className='footer__link'>Downloads</a>
           </li>
           <li>
-            <a>What's new</a>
+            <a className='footer__link'>What's new</a>
           </li>
           <li>
-            <a>Releases</a>
+            <a className='footer__link'>Releases</a>
           </li>
           <li>
-            <a>Careers</a>
+            <a className='footer__link'>Careers</a>
           </li>
           <li>
-            <a>About us</a>
+            <a className='footer__link'>About us</a>
           </li>
           <li>
-            <a>Agency partners</a>
+            <a className='footer__link'>Agency partners</a>
           </li>
           <li>
-            <a>Privacy</a>
+            <a className='footer__link'>Privacy</a>
           </li>
           <li>
-            <a>Status</a>
+            <a className='footer__link'>Status</a>
           </li>
         </ul>
       </div>
-      <div>
-        <h6 className='title'>Compare</h6>
+      <div className='footer__section'>
+        <h6 className='footer__title'>Compare</h6>
         <ul>
           <li>
-            <a>Sketch</a>
+            <a className='footer__link'>Sketch</a>
           </li>
           <li>
-            <a>Adobe XD</a>
+            <a className='footer__link'>Adobe XD</a>
           </li>
           <li>
-            <a>Invision Studio</a>
+            <a className='footer__link'>Invision Studio</a>
           </li>
           <li>
-            <a>Framer</a>
+            <a className='footer__link'>Framer</a>
           </li>
           <li>
-            <a>Design on Windows</a>
+            <a className='footer__link'>Design on Windows</a>
           </li>
           <li>
-            <a>Miro</a>
+            <a className='footer__link'>Miro</a>
           </li>
         </ul>
       </div>
-      <div>
-        <a>Cookie settings</a>
+      <div className='footer__section'>
+        <a className='footer__link'>Cookie settings</a>
       </div>
     </footer>
   );
