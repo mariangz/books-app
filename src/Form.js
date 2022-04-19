@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import RadioButton from './RadioButton';
+import Datalist from './Datalist';
 
 export default function Form() {
   const [data, setData] = useState({
@@ -7,76 +9,98 @@ export default function Form() {
     email: '',
     password: '',
     confirmPassword: '',
-    terms: '',
-    user: '',
+    terms: false,
+    user: 'reader',
+    country: '',
+    device: '',
   });
+
+  const listName = Object.keys(data).map(
+    (item, index) =>
+      index < 5 && (
+        <div className={item} key={item}>
+          <label htmlFor={item}>{item}</label>
+          <input
+            id={item}
+            type={
+              item === 'password' || item === 'confirmPassword'
+                ? 'password'
+                : 'text'
+            }
+            name={item}
+            value={data[item]}
+            onChange={handleInputChange}
+          />
+        </div>
+      )
+  );
+  // console.log(data);
+
+  function handleInputChange(event) {
+    const { name, value, type, checked } = event.target;
+    console.log(event.target);
+    setData((prevValue) => {
+      return {
+        ...prevValue,
+        [name]: type === 'checkbox' ? checked : value,
+      };
+    });
+  }
+  const userList = ['reader', 'writer', 'both'];
   return (
     <form>
-      <div className='name'>
-        <label for='name'>First Name:</label>
-        <input
-          id='name'
-          type='text'
-          name='name'
-          placeholder='Enter your name'
-          value=''
-        />
-      </div>
-      <div className='surname'>
-        <label for='surname'>Surname:</label>
-        <input
-          id='surname'
-          type='text'
-          name='surname'
-          placeholder='Enter your surname'
-          value=''
-        />
-      </div>
-      <div className='email'>
-        <label for='email'>Email:</label>
-        <input
-          type='email'
-          name='email'
-          placeholder='Enter your name'
-          value=''
-        />
-      </div>
-      <div className='password'>
-        <label for='password'>Password:</label>
-        <input
-          type='password'
-          name='password'
-          placeholder='Enter your password'
-          value=''
-        />
-      </div>
-      <div className='confirmPassword'>
-        <label for='confirmPassword'>Confirm Password:</label>
-        <input
-          type='password'
-          name='confirmPassword'
-          placeholder='Enter your password'
-          value=''
-        />
-      </div>
+      {listName}
       <div>
-        <label for='checkbox'>Terms and Conditions:</label>
-        <input type='checkbox' id='terms' name='checkbox' />
-        <span>I have read and agree to the Terms and Conditions</span>
+        <input
+          type='checkbox'
+          id='terms'
+          name='terms'
+          checked={data['terms']}
+          onChange={handleInputChange}
+        />
+        <label htmlFor='checkbox'>
+          I have read and agree to the Terms and Conditions
+        </label>
       </div>
 
-      <fieldset>
-        <legend>Are you...</legend>
-        <input type='radio' />
-        <label>Reader</label>
-        <br />
-        <input type='radio' />
-        <label>Writer</label>
-        <br />
-        <input type='radio' />
-        <label>Both</label>
-        <br />
-      </fieldset>
+      <div>
+        <fieldset>
+          <legend>Are you...</legend>
+          {userList.map((item, index) => (
+            <>
+              <RadioButton
+                key={item}
+                id={item}
+                name={item}
+                value={item}
+                checked={item}
+                label={item}
+              />
+              {index !== userList.length - 1 && <br />}
+            </>
+          ))}
+        </fieldset>
+      </div>
+      <div>
+        <Datalist />
+      </div>
+      <div>
+        <label>Favorite device</label>
+        <select
+          id='device'
+          name='device'
+          value={data.device}
+          onChange={handleInputChange}
+        >
+          {/* <option value=''>Choose an option</option> */}
+          <option value='book'>Physical Book</option>
+          <option value='kindle'>Kindle</option>
+          <option value='kobo'>Kobo</option>
+          <option value='nook'>Nook</option>
+          <option value='other'>Other</option>
+        </select>
+      </div>
+      <button>Submit</button>
     </form>
   );
 }

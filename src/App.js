@@ -1,12 +1,12 @@
 import './App.scss';
 import './normalize.css';
 import Container from './Container';
-import Footer from './Footer';
+import Form from './Form';
 
 function App() {
   return (
     <Container>
-      <Footer />
+      <Form />
     </Container>
   );
 }
