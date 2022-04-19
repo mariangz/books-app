@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import './normalize.css';
 import Container from './Container';
 import Footer from './Footer';
