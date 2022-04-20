@@ -18,16 +18,12 @@ export default function Form() {
 
   const listName = Object.keys(data).map(
     (item, index) =>
-      index < 5 && (
+      index < 2 && (
         <div className={item} key={item}>
           <label htmlFor={item}>{item}</label>
           <input
             id={item}
-            type={
-              item === 'password' || item === 'confirmPassword'
-                ? 'password'
-                : 'text'
-            }
+            type='text'
             name={item}
             value={data[item]}
             onChange={handleInputChange}
@@ -35,7 +31,7 @@ export default function Form() {
         </div>
       )
   );
-  console.log(data);
+  // console.log(data);
   function handleInputChange(event) {
     const { name, value, type, checked } = event.target;
     setData((prevValue) => {
