@@ -14,7 +14,7 @@ export default function RadioButton(props) {
           setUser(!user);
         }}
       />
-      <label>{props.label}</label>
+      <label htmlFor={props.id}>{props.label}</label>
     </>
   );
 }

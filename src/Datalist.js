@@ -2,7 +2,12 @@ export default function Datalist(props) {
   return (
     <>
       <label for='country'>Choose your country:</label>
-      <input list='countries' id='country' name='country' />
+      <input
+        list='countries'
+        id='country'
+        name='country'
+        onChange={props.onInputChange}
+      />
       <datalist id='countries'>
         <option value='Afghanistan' />
         <option value='Albania' />
