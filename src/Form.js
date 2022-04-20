@@ -13,6 +13,7 @@ export default function Form() {
     user: 'reader',
     country: '',
     device: '',
+    birthday: '',
   });
 
   const listName = Object.keys(data).map(
@@ -34,11 +35,9 @@ export default function Form() {
         </div>
       )
   );
-  // console.log(data);
-
+  console.log(data);
   function handleInputChange(event) {
     const { name, value, type, checked } = event.target;
-    console.log(event.target);
     setData((prevValue) => {
       return {
         ...prevValue,
@@ -51,19 +50,6 @@ export default function Form() {
     <form>
       {listName}
       <div>
-        <input
-          type='checkbox'
-          id='terms'
-          name='terms'
-          checked={data['terms']}
-          onChange={handleInputChange}
-        />
-        <label htmlFor='checkbox'>
-          I have read and agree to the Terms and Conditions
-        </label>
-      </div>
-
-      <div>
         <fieldset>
           <legend>Are you...</legend>
           {userList.map((item, index) => (
@@ -71,7 +57,6 @@ export default function Form() {
               <RadioButton
                 key={item}
                 id={item}
-                name={item}
                 value={item}
                 checked={item}
                 label={item}
@@ -82,7 +67,7 @@ export default function Form() {
         </fieldset>
       </div>
       <div>
-        <Datalist />
+        <Datalist onInputChange={handleInputChange} />
       </div>
       <div>
         <label>Favorite device</label>
@@ -92,13 +77,34 @@ export default function Form() {
           value={data.device}
           onChange={handleInputChange}
         >
-          {/* <option value=''>Choose an option</option> */}
           <option value='book'>Physical Book</option>
           <option value='kindle'>Kindle</option>
           <option value='kobo'>Kobo</option>
           <option value='nook'>Nook</option>
           <option value='other'>Other</option>
         </select>
+      </div>
+      <div>
+        <label htmlFor='birthday'></label>
+        <input
+          type='date'
+          id='birthday'
+          name='birthday'
+          value={data.birthday}
+          onChange={handleInputChange}
+        ></input>
+      </div>
+      <div>
+        <input
+          type='checkbox'
+          id='terms'
+          name='terms'
+          checked={data['terms']}
+          onChange={handleInputChange}
+        />
+        <label htmlFor='checkbox'>
+          I have read and agree to the Terms and Conditions
+        </label>
       </div>
       <button>Submit</button>
     </form>
