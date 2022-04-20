@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import RadioButton from './RadioButton';
 import Datalist from './Datalist';
+import './Form.scss';
 
 export default function Form() {
   const [data, setData] = useState({
