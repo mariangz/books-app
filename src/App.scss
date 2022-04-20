@@ -1,7 +1,7 @@
 $breakpoint-tablet: 768px;
 $breakpoint-laptop: 1024px;
-$color-blue: #03314b;
-$color-grey: #282828;
+$color-primary: #03314b;
+$color-secondary: #282828;
 $color-accent: #2ce080;
 $font-main: 'Sora', sans-serif;
 $font-size-min: 14px;
@@ -31,7 +31,7 @@ a {
   cursor: pointer;
 }
 
-footer {
+.footer {
   display: grid;
   gap: 2rem 3rem;
   grid-template-columns: 1fr;
@@ -39,8 +39,8 @@ footer {
   max-width: 1200px;
   padding: 1.5rem;
 
-  .title {
-    color: $color-blue;
+  &__title {
+    color: $color-primary;
     font-size: 0.9rem;
     margin-bottom: 1rem;
   }
@@ -49,19 +49,19 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  a {
-    color: $color-grey;
+  &__link {
+    color: $color-secondary;
     display: block;
     font-size: 0.8rem;
     font-weight: 300;
   }
 
-  a:hover,
+  &__link:hover,
   span:hover {
     text-decoration: underline;
   }
 
-  div:first-child {
+  &__section:first-child {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -73,7 +73,7 @@ footer {
     }
   }
 
-  div:nth-child(6) {
+  &__section:nth-child(6) {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
@@ -92,10 +92,10 @@ ul {
     font-size: $font-size-medium;
   }
 
-  footer {
+  .footer {
     grid-template-columns: repeat(4, 1fr);
 
-    div:first-child {
+    &__section:first-child {
       grid-column: 1/-1;
       span {
         display: inline-block;
@@ -108,7 +108,7 @@ ul {
       grid-template-columns: repeat(1, 1fr);
     }
 
-    div:nth-child(6) {
+    &__section:nth-child(6) {
       grid-column: 1/-1;
     }
   }
@@ -118,11 +118,11 @@ ul {
   * {
     font-size: $font-size-max;
   }
-  footer {
+  .footer {
     gap: 3rem 2.3rem;
     grid-template-columns: repeat(5, 1fr);
 
-    div:first-child {
+    &__section:first-child {
       align-items: flex-start;
       flex-direction: column;
       grid-column: 1/2;
