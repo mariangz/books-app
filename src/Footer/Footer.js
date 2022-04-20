@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
-
+import './Footer.scss';
 export default function Footer() {
   return (
     <footer className='footer'>

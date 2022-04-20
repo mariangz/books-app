@@ -1,12 +1,4 @@
-$breakpoint-tablet: 768px;
-$breakpoint-laptop: 1024px;
-$color-primary: #03314b;
-$color-secondary: #282828;
-$color-accent: #2ce080;
-$font-main: 'Sora', sans-serif;
-$font-size-min: 14px;
-$font-size-medium: 15px;
-$font-size-max: 16px;
+@import './Variables.scss';
 
 *,
 *::before,
@@ -31,86 +23,10 @@ a {
   cursor: pointer;
 }
 
-.footer {
-  display: grid;
-  gap: 2rem 3rem;
-  grid-template-columns: 1fr;
-  line-height: 1.7;
-  max-width: 1200px;
-  padding: 1.5rem;
-
-  &__title {
-    color: $color-primary;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-
-  ul {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  &__link {
-    color: $color-secondary;
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 300;
-  }
-
-  &__link:hover,
-  span:hover {
-    text-decoration: underline;
-  }
-
-  &__section:first-child {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    ul {
-      display: flex;
-    }
-    span {
-      display: none;
-    }
-  }
-
-  &__section:nth-child(6) {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-}
-
-ul {
-  display: grid;
-  gap: 1rem;
-  list-style: none;
-}
-
 /* Media Queries */
 @media (min-width: $breakpoint-tablet) {
   * {
     font-size: $font-size-medium;
-  }
-
-  .footer {
-    grid-template-columns: repeat(4, 1fr);
-
-    &__section:first-child {
-      grid-column: 1/-1;
-      span {
-        display: inline-block;
-        font-size: 0.8rem;
-        padding-left: 10px;
-      }
-    }
-
-    ul {
-      grid-template-columns: repeat(1, 1fr);
-    }
-
-    &__section:nth-child(6) {
-      grid-column: 1/-1;
-    }
   }
 }
 
@@ -118,21 +34,6 @@ ul {
   * {
     font-size: $font-size-max;
   }
-  .footer {
-    gap: 3rem 2.3rem;
-    grid-template-columns: repeat(5, 1fr);
-
-    &__section:first-child {
-      align-items: flex-start;
-      flex-direction: column;
-      grid-column: 1/2;
-      justify-content: flex-start;
-      ul {
-        flex-direction: column;
-      }
-    }
-  }
-
   .container {
     justify-content: center;
   }
