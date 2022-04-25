@@ -1,13 +1,13 @@
 import './App.scss';
 import './normalize.css';
 import Container from './Container';
-import Form from './Form/Form';
+import SignupForm from './SignupForm/SignupForm';
 import Footer from './Footer/Footer';
 
 function App() {
   return (
     <Container>
-      <Form />
+      <SignupForm />
       {/* <Footer /> */}
     </Container>
   );
