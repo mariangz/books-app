@@ -1,10 +1,16 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { countryList } from './countryList';
+import Email from '../FormComponents/Email';
+import TextInput from '../FormComponents/TextInput';
+import PasswordInput from '../FormComponents/PasswordInput';
 import './SignupForm.scss';
+import Checkbox from '../FormComponents/Checkbox';
+import Select from '../FormComponents/Select';
+import Datalist from '../FormComponents/Datalist';
+import Radio from '../FormComponents/Radio';
+import Date from '../FormComponents/Date';
 
 export default function SignupForm() {
-  const userList = ['reader', 'writer', 'both'];
   return (
     <Formik
       initialValues={{
@@ -13,6 +19,7 @@ export default function SignupForm() {
         email: '',
         country: '',
         device: '',
+        user: 'reader',
         birthday: '',
         password: '',
         confirmPassword: '',
@@ -30,7 +37,9 @@ export default function SignupForm() {
         device: Yup.string().required('Required'),
         birthday: Yup.string().required('Required'),
         password: Yup.string().required('Required'),
-        confirmPassword: Yup.string().required('Required'),
+        confirmPassword: Yup.string()
+          .required('Required')
+          .oneOf([Yup.ref('password'), null], 'Passwords must match'),
         acceptedTerms: Yup.boolean()
           .required('Required')
           .oneOf([true], 'You must accept the terms and conditions.'),
@@ -40,84 +49,38 @@ export default function SignupForm() {
       }}
     >
       <Form>
-        <div>
-          <label htmlFor='firstName'>First Name</label>
-          <Field name='firstName' type='firstName' />
-          <ErrorMessage name='firstName' />
-        </div>
-        <div>
-          <label htmlFor='lastName'>Last Name</label>
-          <Field name='lastName' type='lastName' />
-          <ErrorMessage name='lastName' />
-        </div>
-        <div>
-          <label htmlFor='email'>Email</label>
-          <Field name='email' type='email' />
-          <ErrorMessage name='email' />
-        </div>
-        <div>
-          <label htmlFor='country'>Country</label>
-          <Field name='country' list='countries' />
-          <datalist id='countries'>
-            {countryList.map((country) => (
-              <option value={country} />
-            ))}
-          </datalist>
-          <ErrorMessage name='country' />
-        </div>
-        <div>
-          <label htmlFor='device'>Favorite device</label>
-          <Field name='device' as='select'>
-            <option value=''>Choose one</option>
-            <option value='book'>Physical Book</option>
-            <option value='kindle'>Kindle</option>
-            <option value='kobo'>Kobo</option>
-            <option value='nook'>Nook</option>
-            <option value='other'>Other</option>
-          </Field>
-          <ErrorMessage name='device' />
-        </div>
-
-        <div>
-          <fieldset>
-            <legend>Are you...</legend>
-            {userList.map((item, index) => (
-              <div>
-                <input
-                  type='radio'
-                  key={item}
-                  id={item}
-                  name='user'
-                  value={item}
-                />
-                <label htmlFor={item}>{item}</label>
-                {index !== userList.length - 1 && <br />}
-              </div>
-            ))}
-          </fieldset>
-        </div>
-        <div>
-          <label htmlFor='birthday'>Birthday</label>
-          <Field name='birthday' type='date' />
-          <ErrorMessage name='birthday' />
-        </div>
-        <div>
-          <label htmlFor='password'>Password</label>
-          <Field name='password' type='password' />
-          <ErrorMessage name='password' />
-        </div>
-        <div>
-          <label htmlFor='confirmPassword'>Confirm Password</label>
-          <Field name='confirmPassword' type='password' />
-          <ErrorMessage name='confirmPassword' />
-        </div>
-        <div>
-          <label htmlFor='acceptedTerms'>
-            I have read and agree to the Terms and Conditions
-          </label>
-          <Field name='acceptedTerms' type='checkbox' />
-          <ErrorMessage name='acceptedTerms' />
-        </div>
+        <TextInput
+          label='First Name'
+          name='firstName'
+          type='text'
+          placeholder='Laura'
+        />
+        <TextInput
+          label='Last Name'
+          name='lastName'
+          type='text'
+          placeholder='Casas'
+        />
+        <Email
+          label='Email'
+          name='email'
+          type='email'
+          placeholder='laura@casas.com'
+        />
+        <Date label='Birthday' name='birthday' type='date' />
+        <Select label='Favorite Device' name='device' />
+        <Datalist label='Your Country' name='country' />
+        <Radio label='User' name='user' />
+        <PasswordInput label='Password' name='password' type='password' />
+        <PasswordInput
+          label='Confirm Password'
+          name='confirmPassword'
+          type='password'
+        />
+        <Checkbox
+          label='I have read and agree to the Terms and Conditions'
+          name='acceptedTerms'
+        />
         <button type='submit'>Submit</button>
       </Form>
     </Formik>
