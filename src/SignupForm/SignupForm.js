@@ -3,36 +3,6 @@ import * as Yup from 'yup';
 import { countryList } from './countryList';
 import './SignupForm.scss';
 
-// const validate = (values) => {
-//   const errors = {};
-
-//   if (!values.firstName) {
-//     errors.firstName = 'Required';
-//   } else if (values.firstName.length > 15) {
-//     errors.firstName = 'Must be 15 characters or less';
-//   }
-
-//   if (!values.lastName) {
-//     errors.lastName = 'Required';
-//   } else if (values.lastName.length > 15) {
-//     errors.lastName = 'Must be 15 characters or less';
-//   }
-
-//   if (!values.email) {
-//     errors.email = 'Required';
-//   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-//     errors.email = 'Invalid email address';
-//   }
-
-//   if (!values.country) {
-//     errors.country = 'Required';
-//   }
-//   if (!values.device) {
-//     errors.device = 'Required';
-//   }
-//   return errors;
-// };
-
 export default function SignupForm() {
   const formik = useFormik({
     initialValues: {
@@ -41,8 +11,8 @@ export default function SignupForm() {
       email: '',
       country: '',
       device: '',
+      acceptedTerms: false,
     },
-    // validate,
     validationSchema: Yup.object({
       firstName: Yup.string()
         .max(15, 'Must be 15 characters or less')
@@ -52,13 +22,18 @@ export default function SignupForm() {
         .required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
       country: Yup.string().required('Required'),
+      device: Yup.string().required('Required'),
+      birthday: Yup.string().required('Required'),
+      acceptedTerms: Yup.boolean()
+        .required('Required')
+        .oneOf([true], 'You must accept the terms and conditions.'),
     }),
     onSubmit: (values) => {
       console.log(values);
     },
   });
 
-  // const userList = ['reader', 'writer', 'both'];
+  const userList = ['reader', 'writer', 'both'];
   return (
     <form className='form' onSubmit={formik.handleSubmit}>
       <div>
@@ -122,34 +97,48 @@ export default function SignupForm() {
         )}
       </div>
 
-      {/* 
       <div>
         <fieldset>
           <legend>Are you...</legend>
           {userList.map((item, index) => (
-            <>
-              <RadioButton
+            <div>
+              <input
+                type='radio'
                 key={item}
                 id={item}
+                name='user'
                 value={item}
-                checked={item}
-                label={item}
               />
+              <label htmlFor={item}>{item}</label>
               {index !== userList.length - 1 && <br />}
-            </>
+            </div>
           ))}
         </fieldset>
       </div>
       <div>
         <label htmlFor='birthday'></label>
-        <input type='date' id='birthday' name='birthday'></input>
+        <input
+          type='date'
+          id='birthday'
+          {...formik.getFieldProps('birthday')}
+        ></input>
+        {formik.touched.birthday && formik.errors.birthday && (
+          <div>{formik.errors.birthday}</div>
+        )}
       </div>
       <div>
-        <input type='checkbox' id='terms' name='terms' />
+        <input
+          type='checkbox'
+          id='acceptedTerms'
+          {...formik.getFieldProps('acceptedTerms')}
+        />
         <label htmlFor='checkbox'>
           I have read and agree to the Terms and Conditions
         </label>
-      </div> */}
+        {formik.touched.acceptedTerms && formik.errors.acceptedTerms && (
+          <div>{formik.errors.acceptedTerms}</div>
+        )}
+      </div>
 
       <button type='submit'>Submit</button>
     </form>
