@@ -5,8 +5,7 @@ import './SignupForm.scss';
 import Checkbox from '../FormComponents/Checkbox';
 import Select from '../FormComponents/Select';
 import Datalist from '../FormComponents/Datalist';
-import Radio from '../FormComponents/Radio';
-import Date from '../FormComponents/Date';
+// import Radio from '../FormComponents/Radio';
 import { countryList } from '../FormComponents/countryList';
 
 export default function SignupForm() {
@@ -18,7 +17,7 @@ export default function SignupForm() {
         email: '',
         country: '',
         device: '',
-        user: 'reader',
+        // user: 'reader',
         birthday: '',
         password: '',
         confirmPassword: '',
@@ -72,12 +71,12 @@ export default function SignupForm() {
           type='email'
           placeholder='laura@casas.com'
         />
-        <Date
+        <TextInput
           label='Birthday'
           htmlFor='birthday'
           name='birthday'
-          type='date'
           id='birthday'
+          type='date'
         />
         <Select
           label='Favorite Device'
@@ -92,6 +91,7 @@ export default function SignupForm() {
           <option value='nook'>Nook</option>
           <option value='other'>Other</option>
         </Select>
+        {/* <Radio legend='You are...'></Radio> */}
         <Datalist
           label='Your Country'
           htmlFor='country'
@@ -105,7 +105,7 @@ export default function SignupForm() {
             ))}
           </datalist>
         </Datalist>
-        <Radio label='User' name='user' />
+
         <TextInput
           label='Password'
           htmlFor='password'
