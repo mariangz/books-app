@@ -9,6 +9,7 @@ import Select from '../FormComponents/Select';
 import Datalist from '../FormComponents/Datalist';
 import Radio from '../FormComponents/Radio';
 import Date from '../FormComponents/Date';
+import { countryList } from '../FormComponents/countryList';
 
 export default function SignupForm() {
   return (
@@ -69,7 +70,13 @@ export default function SignupForm() {
         />
         <Date label='Birthday' name='birthday' type='date' />
         <Select label='Favorite Device' name='device' />
-        <Datalist label='Your Country' name='country' />
+        <Datalist label='Your Country' name='country' list='countries'>
+          <datalist id='countries'>
+            {countryList.map((country) => (
+              <option key={country} value={country} />
+            ))}
+          </datalist>
+        </Datalist>
         <Radio label='User' name='user' />
         <PasswordInput label='Password' name='password' type='password' />
         <PasswordInput

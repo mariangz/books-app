@@ -1,17 +1,12 @@
 import { useField } from 'formik';
-import { countryList } from '../FormComponents/countryList';
 
-export default function Datalist({ label, ...props }) {
+export default function Datalist({ label, list, children, ...props }) {
   const [field, meta] = useField(props);
   return (
     <div>
       <label htmlFor='country'>Country</label>
-      <input list='countries' {...field} {...props} />
-      <datalist id='countries'>
-        {countryList.map((country) => (
-          <option key={country} value={country} />
-        ))}
-      </datalist>
+      <input list={list} {...field} {...props} />
+      {children}
       {meta.touched && meta.error && <div className='error'>{meta.error}</div>}
     </div>
   );
