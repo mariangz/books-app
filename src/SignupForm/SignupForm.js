@@ -86,7 +86,13 @@ export default function SignupForm() {
           <option value='nook'>Nook</option>
           <option value='other'>Other</option>
         </Select>
-        <Datalist label='Your Country' name='country' list='countries'>
+        <Datalist
+          label='Your Country'
+          htmlFor='country'
+          name='country'
+          id='country'
+          list='countries'
+        >
           <datalist id='countries'>
             {countryList.map((country) => (
               <option key={country} value={country} />
