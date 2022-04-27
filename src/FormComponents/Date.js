@@ -7,7 +7,7 @@ export default function Date({ label, ...props }) {
       <label htmlFor={props.name} className='label date'>
         {label}
       </label>
-      <input id={props.name} type='checkbox' {...field} {...props} />
+      <input {...field} {...props} />
       {meta.touched && meta.error && <div className='error'>{meta.error}</div>}
     </div>
   );

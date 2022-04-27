@@ -7,7 +7,7 @@ export default function Checkbox({ label, ...props }) {
       <label htmlFor={props.name} className='label checkbox'>
         {label}
       </label>
-      <input id={props.name} type='checkbox' {...field} {...props} />
+      <input type='checkbox' {...field} {...props} />
       {meta.touched && meta.error && <div className='error'>{meta.error}</div>}
     </div>
   );
