@@ -1,8 +1,6 @@
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import Email from '../FormComponents/Email';
 import TextInput from '../FormComponents/TextInput';
-import PasswordInput from '../FormComponents/PasswordInput';
 import './SignupForm.scss';
 import Checkbox from '../FormComponents/Checkbox';
 import Select from '../FormComponents/Select';
@@ -52,6 +50,7 @@ export default function SignupForm() {
       <Form>
         <TextInput
           label='First Name'
+          htmlFor='firstName'
           name='firstName'
           id='firstName'
           type='text'
@@ -59,12 +58,13 @@ export default function SignupForm() {
         />
         <TextInput
           label='Last Name'
+          htmlFor='lastName'
           name='lastName'
           id='lastName'
           type='text'
           placeholder='Casas'
         />
-        <Email
+        <TextInput
           label='Email'
           htmlFor='email'
           name='email'
@@ -106,14 +106,14 @@ export default function SignupForm() {
           </datalist>
         </Datalist>
         <Radio label='User' name='user' />
-        <PasswordInput
+        <TextInput
           label='Password'
           htmlFor='password'
           name='password'
           type='password'
           id='password'
         />
-        <PasswordInput
+        <TextInput
           label='Confirm Password'
           htmlFor='confirmPassword'
           name='confirmPassword'
