@@ -110,6 +110,7 @@ export default function SignupForm() {
         />
         <Checkbox
           label='I have read and agree to the Terms and Conditions'
+          htmlFor='acceptedTerms'
           name='acceptedTerms'
           id='acceptedTerms'
         />
