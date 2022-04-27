@@ -1,11 +1,11 @@
 import { useField } from 'formik';
 
-export default function EmailInput({ label, ...props }) {
+export default function EmailInput({ label, htmlFor, ...props }) {
   const [field, meta] = useField(props);
   return (
     <div>
-      <label htmlFor={props.name}>{label}</label>
-      <input id={props.name} className='input text' {...field} {...props} />
+      <label htmlFor={htmlFor}>{label}</label>
+      <input className='input text' {...field} {...props} />
       {meta.touched && meta.error && <div className='error'>{meta.error}</div>}
     </div>
   );

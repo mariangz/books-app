@@ -53,23 +53,39 @@ export default function SignupForm() {
         <TextInput
           label='First Name'
           name='firstName'
+          id='firstName'
           type='text'
           placeholder='Laura'
         />
         <TextInput
           label='Last Name'
           name='lastName'
+          id='lastName'
           type='text'
           placeholder='Casas'
         />
         <Email
           label='Email'
+          htmlFor='email'
           name='email'
+          id='email'
           type='email'
           placeholder='laura@casas.com'
         />
-        <Date label='Birthday' name='birthday' type='date' />
-        <Select label='Favorite Device' name='device' />
+        <Date label='Birthday' name='birthday' type='date' id='birthday' />
+        <Select
+          label='Favorite Device'
+          name='device'
+          htmlFor='device'
+          id='device'
+        >
+          <option value=''>Choose one</option>
+          <option value='book'>Physical Book</option>
+          <option value='kindle'>Kindle</option>
+          <option value='kobo'>Kobo</option>
+          <option value='nook'>Nook</option>
+          <option value='other'>Other</option>
+        </Select>
         <Datalist label='Your Country' name='country' list='countries'>
           <datalist id='countries'>
             {countryList.map((country) => (
@@ -78,15 +94,24 @@ export default function SignupForm() {
           </datalist>
         </Datalist>
         <Radio label='User' name='user' />
-        <PasswordInput label='Password' name='password' type='password' />
+        <PasswordInput
+          label='Password'
+          htmlFor='password'
+          name='password'
+          type='password'
+          id='password'
+        />
         <PasswordInput
           label='Confirm Password'
+          htmlFor='confirmPassword'
           name='confirmPassword'
           type='password'
+          id='confirmPassword'
         />
         <Checkbox
           label='I have read and agree to the Terms and Conditions'
           name='acceptedTerms'
+          id='acceptedTerms'
         />
         <button type='submit'>Submit</button>
       </Form>
