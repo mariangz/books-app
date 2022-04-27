@@ -72,7 +72,13 @@ export default function SignupForm() {
           type='email'
           placeholder='laura@casas.com'
         />
-        <Date label='Birthday' name='birthday' type='date' id='birthday' />
+        <Date
+          label='Birthday'
+          htmlFor='birthday'
+          name='birthday'
+          type='date'
+          id='birthday'
+        />
         <Select
           label='Favorite Device'
           name='device'
