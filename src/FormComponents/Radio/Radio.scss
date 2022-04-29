@@ -1,0 +1,26 @@
+@import '../../Variables.scss';
+
+fieldset {
+  border: 2px solid $color-grey-light;
+}
+
+label {
+  display: block;
+}
+
+input {
+  display: block;
+  font-family: $font-main;
+}
+
+legend {
+  padding: 0 0.8rem;
+  margin-bottom: 0.3rem;
+  font-size: $font-size-min;
+}
+
+.radio__item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
