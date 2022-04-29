@@ -1,0 +1,19 @@
+@import '../../Variables.scss';
+
+.input {
+  display: block;
+  width: 100%;
+  border: 1px solid $color-grey-light;
+  border-radius: $border-radius;
+  outline: 1px solid $color-grey-light;
+  padding: 0.8rem;
+  font-family: $font-main;
+}
+
+.label {
+  color: $color-grey;
+  display: block;
+  font-size: $font-size-min;
+  margin-bottom: 0.7rem;
+  font-family: $font-main;
+}
