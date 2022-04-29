@@ -5,18 +5,15 @@
   width: 100%;
   border: 1px solid $color-grey-light;
   border-radius: $border-radius;
-  // outline: 2px solid $color-accent-second;
   padding: 0.8rem;
   font-family: $font-main;
 
   &.input-error.touched {
     border: 1px solid $color-error;
-    // outline: 1px solid $color-error;
   }
 
   &.success.touched {
     border: 1px solid $color-success;
-    // outline: 1px solid $color-success;
   }
 }
 

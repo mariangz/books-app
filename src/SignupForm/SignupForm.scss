@@ -3,7 +3,7 @@
 .form {
   padding: 4rem;
   padding-bottom: 6rem;
-  max-width: 800px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -15,10 +15,6 @@
 
   option {
     font-family: $font-main;
-  }
-
-  h2 {
-    margin-bottom: 2rem;
   }
 }
 
@@ -40,8 +36,4 @@
 
 /* Media Queries */
 @media (min-width: $breakpoint-tablet) {
-  .nombres {
-    display: flex;
-    gap: $gap;
-  }
 }

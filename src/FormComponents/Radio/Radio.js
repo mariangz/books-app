@@ -1,11 +1,34 @@
 import { useField } from 'formik';
 import './Radio.scss';
 
-const radioList = ['reader', 'writer', 'both'];
+const RadioButton = ({
+  ...fuseField,
+  id,
+  label,
+  className,
+  ...props
+}) => {
+  return (
+    <div>
+      <input
+        name={name}
+        id={id}
+        type="radio"
+        value={id} // could be something else for output?
+        checked={id === value}
+        onChange={onChange}
+        onBlur={onBlur}
+        className={classNames("radio-button")}
+        {...props}
+      />
+      <label htmlFor={id}>{label}</label>
+    </div>
+  );
+};
 
 export default function Radio({ legend, ...props }) {
-  const [field, meta] = useField(props);
-  // console.log(field);
+ 
+  console.log(field);
   return (
     <>
       <fieldset>
@@ -14,7 +37,7 @@ export default function Radio({ legend, ...props }) {
           <div key={item} className='radio__container'>
             <div className='radio__item'>
               <input
-                {...field}
+                
                 type='radio'
                 name='user'
                 id={item}
@@ -25,8 +48,10 @@ export default function Radio({ legend, ...props }) {
             </div>
           </div>
         ))}
+        {/* {meta.touched && meta.error && (
+          <div className='error'>{meta.error}</div>
+        )} */}
       </fieldset>
-      {/* {meta.touched && meta.error && <div className='error'>{meta.error}</div>} */}
     </>
   );
 }

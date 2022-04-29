@@ -25,15 +25,12 @@ a {
 
 /* Media Queries */
 @media (min-width: $breakpoint-tablet) {
-  * {
+  footer {
     font-size: $font-size-medium;
   }
 }
 
 @media (min-width: $breakpoint-laptop) {
-  * {
-    font-size: $font-size-max;
-  }
   .container {
     justify-content: center;
   }

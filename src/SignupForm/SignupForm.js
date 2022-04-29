@@ -26,9 +26,11 @@ export default function SignupForm() {
       }}
       validationSchema={Yup.object({
         firstName: Yup.string()
+          .min(2, 'Must be at least 2 characters')
           .max(15, 'Must be 15 characters or less')
           .required('Required'),
         lastName: Yup.string()
+          .min(2, 'Must be at least 2 characters')
           .max(15, 'Must be 15 characters or less')
           .required('Required'),
         email: Yup.string().email('Invalid email address').required('Required'),
@@ -105,8 +107,6 @@ export default function SignupForm() {
               ))}
             </datalist>
           </Datalist>
-        </div>
-        <div className='form__column'>
           <Select
             label='Favorite Device'
             name='device'
@@ -120,9 +120,7 @@ export default function SignupForm() {
             <option value='nook'>Nook</option>
             <option value='other'>Other</option>
           </Select>
-
           <Radio legend='Type of user:' />
-
           <TextInput
             label='Password'
             htmlFor='password'
@@ -137,8 +135,7 @@ export default function SignupForm() {
             type='password'
             id='confirmPassword'
           />
-        </div>
-        <div className='form__column final'>
+
           <Checkbox
             label='I accept the Terms and Conditions'
             htmlFor='acceptedTerms'
