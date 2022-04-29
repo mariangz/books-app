@@ -3,11 +3,11 @@ import * as Yup from 'yup';
 import TextInput from '../FormComponents/TextInput/TextInput';
 import './SignupForm.scss';
 import Checkbox from '../FormComponents/Checkbox/Checkbox';
-import Select from '../FormComponents/Select';
-import Datalist from '../FormComponents/Datalist';
+import Select from '../FormComponents/Select/Select';
+import Datalist from '../FormComponents/Datalist/Datalist';
 import Radio from '../FormComponents/Radio/Radio';
 import Button from '../FormComponents/Button/Button';
-import { countryList } from '../FormComponents/countryList';
+import { countryList } from '../FormComponents/Datalist/countryList';
 
 export default function SignupForm() {
   return (
