@@ -1,13 +1,14 @@
 import { useField } from 'formik';
+import './Checkbox.scss';
 
 export default function Checkbox({ label, htmlFor, ...props }) {
   const [field, meta] = useField({ ...props, type: 'checkbox' });
   return (
     <div>
-      <label htmlFor={htmlFor} className='label checkbox'>
-        {label}
-      </label>
-      <input type='checkbox' {...field} {...props} />
+      <div className='checkbox-container'>
+        <input type='checkbox' {...field} {...props} />
+        <label htmlFor={htmlFor}>{label}</label>
+      </div>
       {meta.touched && meta.error && <div className='error'>{meta.error}</div>}
     </div>
   );
