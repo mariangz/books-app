@@ -1,6 +1,4 @@
 import { useField } from 'formik';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
 import './TextInput.scss';
 import clsx from 'clsx';
 

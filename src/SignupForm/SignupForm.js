@@ -5,6 +5,7 @@ import './SignupForm.scss';
 import Checkbox from '../FormComponents/Checkbox/Checkbox';
 import Select from '../FormComponents/Select/Select';
 import Datalist from '../FormComponents/Datalist/Datalist';
+import Password from '../FormComponents/Password/Password';
 import Radio from '../FormComponents/Radio/Radio';
 import Button from '../FormComponents/Button/Button';
 import { countryList } from '../FormComponents/Datalist/countryList';
@@ -36,7 +37,7 @@ export default function SignupForm() {
         email: Yup.string().email('Invalid email address').required('Required'),
         country: Yup.string().required('Required'),
         device: Yup.string().required('Required'),
-        user: Yup.string().required('Required'),
+        user: Yup.string().required('A radio option is required'),
         birthday: Yup.string().required('Required'),
         password: Yup.string()
           .required('Required')
@@ -107,6 +108,7 @@ export default function SignupForm() {
               ))}
             </datalist>
           </Datalist>
+          <Radio legend='Type of user:' />
           <Select
             label='Favorite Device'
             name='device'
@@ -120,22 +122,19 @@ export default function SignupForm() {
             <option value='nook'>Nook</option>
             <option value='other'>Other</option>
           </Select>
-          <Radio legend='Type of user:' />
-          <TextInput
+
+          <Password
             label='Password'
             htmlFor='password'
             name='password'
-            type='password'
             id='password'
           />
-          <TextInput
+          <Password
             label='Confirm Password'
             htmlFor='confirmPassword'
             name='confirmPassword'
-            type='password'
             id='confirmPassword'
           />
-
           <Checkbox
             label='I accept the Terms and Conditions'
             htmlFor='acceptedTerms'
