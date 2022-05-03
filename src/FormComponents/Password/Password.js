@@ -33,7 +33,6 @@ export default function Password({ label, htmlFor, ...props }) {
           touched: meta.touched,
         })}
       />
-
       <span
         className='eye-toggle'
         onClick={() => setShowPassword((prevValue) => !prevValue)}
