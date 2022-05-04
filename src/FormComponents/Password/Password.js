@@ -47,7 +47,7 @@ export default function Password({ label, htmlFor, ...props }) {
       </div>
 
       {meta.touched && meta.error && (
-        <p className='error'>Password must include at least 8 characters.</p>
+        <p className='error'>It must include at least 8 characters.</p>
       )}
     </div>
   );
