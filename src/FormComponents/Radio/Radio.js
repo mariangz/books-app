@@ -1,45 +1,30 @@
-import { Field } from 'formik';
+import { useField } from 'formik';
 import './Radio.scss';
-const userList = ['reader', 'writer', 'both'];
 
-const RadioButton = ({
-  field: { name, value, onChange, onBlur },
-  id,
-  label,
-  className,
-  ...props
-}) => {
+export default function Radio({ ...props }) {
+  const [field, meta] = useField(props);
+
+  const userList = ['reader', 'writer', 'both'];
   return (
-    <div>
-      <input
-        name={name}
-        id={id}
-        type='radio'
-        value={id}
-        checked={id === value}
-        onChange={onChange}
-        onBlur={onBlur}
-        {...props}
-      />
-      <label htmlFor={id}>{label}</label>
-    </div>
+    <fieldset className='fieldset input-container'>
+      <legend>You are a:</legend>
+      {userList.map((item) => {
+        return (
+          <div key={item} className='radio-input-container'>
+            <input
+              {...props}
+              {...field}
+              type='radio'
+              id={item}
+              name='user'
+              value={item}
+            />
+            <label htmlFor={item}>{item}</label>
+          </div>
+        );
+      })}
+
+      {meta.touched && meta.error && <div className='error'>{meta.error}</div>}
+    </fieldset>
   );
-};
-export default function Radio(legend, ...props) {
-  <fieldset>
-    <legend>{legend}</legend>
-    {userList.map((item) => {
-      <RadioButton key={{ item }}>
-        <input
-          type='radio'
-          id={item}
-          name='user'
-          value={item}
-          checked={id === value}
-        />
-        <label htmlFor={item}>{item}</label>
-      </RadioButton>;
-    })}
-    {touched && <div className='error'>{error}</div>}
-  </fieldset>;
 }
