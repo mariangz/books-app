@@ -59,25 +59,27 @@ export default function SignupForm() {
       <Form className='form'>
         <div>
           <h2 className='form__title'>Sign Up</h2>
-          <hr className='form__line' />
+          <hr className='form__line input-container' />
         </div>
         <div className='form__column'>
-          <TextInput
-            label='First Name'
-            htmlFor='firstName'
-            name='firstName'
-            id='firstName'
-            type='text'
-            placeholder='Laura'
-          />
-          <TextInput
-            label='Last Name'
-            htmlFor='lastName'
-            name='lastName'
-            id='lastName'
-            type='text'
-            placeholder='Casas'
-          />
+          <div className='form__names'>
+            <TextInput
+              label='First Name'
+              htmlFor='firstName'
+              name='firstName'
+              id='firstName'
+              type='text'
+              placeholder='Laura'
+            />
+            <TextInput
+              label='Last Name'
+              htmlFor='lastName'
+              name='lastName'
+              id='lastName'
+              type='text'
+              placeholder='Casas'
+            />
+          </div>
 
           <TextInput
             label='Email'
@@ -104,11 +106,14 @@ export default function SignupForm() {
           >
             <datalist id='countries'>
               {countryList.map((country) => (
-                <option key={country} value={country} />
+                <option
+                  key={country.name}
+                  value={country.emoji + ' ' + country.name}
+                ></option>
               ))}
             </datalist>
           </Datalist>
-          <Radio legend='Type of user:' />
+          <Radio name='user' />
           <Select
             label='Favorite Device'
             name='device'

@@ -8,24 +8,26 @@
   flex-direction: column;
   gap: 2.5rem;
   color: $color-grey;
-
-  select {
-    font-family: $font-main;
-  }
-
-  option {
-    font-family: $font-main;
-  }
 }
 
-.form__column {
+.form__column,
+.form__names {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  max-width: 300px;
 }
 
 .form__title {
   font-size: $font-size-max;
+}
+
+.form__line {
+  margin-top: 1rem;
+}
+
+.input-container {
+  max-width: 300px;
 }
 
 .error {
@@ -36,4 +38,7 @@
 
 /* Media Queries */
 @media (min-width: $breakpoint-tablet) {
+  .form__names {
+    flex-direction: row;
+  }
 }
