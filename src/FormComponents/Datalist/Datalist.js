@@ -4,7 +4,7 @@ import clsx from 'clsx';
 export default function Datalist({ label, htmlFor, children, ...props }) {
   const [field, meta] = useField(props);
   return (
-    <div className='field'>
+    <div className='field input-container'>
       <label htmlFor={htmlFor} className='label datalist'>
         Country
       </label>
