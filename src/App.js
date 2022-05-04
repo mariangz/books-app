@@ -4,12 +4,14 @@ import Container from './Container';
 import SignupForm from './SignupForm/SignupForm';
 import Login from './Login/Login';
 import Footer from './Footer/Footer';
+import Navbar from './Navbar/Navbar';
 
 function App() {
   return (
     <Container>
-      <Login />
-      {/* <Footer /> */}
+      <Navbar />
+      <SignupForm />
+      <Footer />
     </Container>
   );
 }
