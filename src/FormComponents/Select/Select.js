@@ -5,7 +5,7 @@ export default function Select({ label, htmlFor, children, ...props }) {
   const [field, meta] = useField(props);
 
   return (
-    <div className='field'>
+    <div className='field input-container'>
       <label htmlFor={htmlFor} className='label select'>
         {label}
       </label>

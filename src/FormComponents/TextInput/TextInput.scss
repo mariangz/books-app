@@ -1,12 +1,13 @@
 @import '../../Variables.scss';
 
 .input {
-  display: block;
-  width: 100%;
+  background-color: #fff;
   border: 1px solid $color-grey-light;
   border-radius: $border-radius;
-  padding: 0.8rem;
+  display: block;
   font-family: $font-main;
+  padding: 0.8rem;
+  width: 100%;
 
   &.input-error.touched {
     border: 1px solid $color-error;
@@ -22,5 +23,4 @@
   display: block;
   font-size: $font-size-min;
   margin-bottom: 0.7rem;
-  font-family: $font-main;
 }
