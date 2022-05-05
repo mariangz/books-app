@@ -20,6 +20,14 @@ function App() {
             </Container>
           }
         />
+        <Route
+          path='/signup'
+          element={
+            <Container>
+              <SignupForm />
+            </Container>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
