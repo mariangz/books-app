@@ -9,7 +9,7 @@ export default function Footer() {
         <ul>
           {['Facebook', 'Twitter', 'Youtube', 'Instagram'].map((item) => (
             <li key={item}>
-              <a className='footer__link'>
+              <a classNxame='footer__link'>
                 <FontAwesomeIcon icon={brands('facebook')} />
                 <span>{item}</span>
               </a>

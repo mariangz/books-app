@@ -1,4 +1,4 @@
-@import '../Variables.scss';
+@import '../../Variables.scss';
 
 header {
   width: 100%;
@@ -15,4 +15,9 @@ header {
 
 .push {
   margin-right: auto;
+}
+
+.active {
+  font-weight: 600;
+  color: red;
 }
