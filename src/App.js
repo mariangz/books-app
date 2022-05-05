@@ -1,35 +1,24 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Container from './Container';
-import SignupForm from './SignupForm/SignupForm';
-import Login from './Login/Login';
-import Footer from './Footer/Footer';
-import Navbar from './Navbar/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Components/Home';
+import Navbar from './Components/Navbar/Navbar';
+import Footer from './Components/Footer/Footer';
+import SignupForm from './Components/SignupForm/SignupForm';
+import Login from './Components/Login/Login';
+import Container from './Components/Container';
 import './App.scss';
 import './normalize.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Container>
+      <Navbar />
       <Routes>
-        <Route
-          path='/'
-          element={
-            <Container>
-              <Navbar />
-              <Footer />
-            </Container>
-          }
-        />
-        <Route
-          path='/signup'
-          element={
-            <Container>
-              <SignupForm />
-            </Container>
-          }
-        />
+        <Route path='/' element={<Home />} />
+        <Route path='/signup' element={<SignupForm />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
-    </BrowserRouter>
+      <Footer />
+    </Container>
   );
 }
 
