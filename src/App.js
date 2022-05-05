@@ -10,12 +10,17 @@ import './normalize.css';
 function App() {
   return (
     <BrowserRouter>
-    <Route path='/' element={} />
-      <Container>
-        <Navbar />
-        <SignupForm />
-        <Footer />
-      </Container>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <Container>
+              <Navbar />
+              <Footer />
+            </Container>
+          }
+        />
+      </Routes>
     </BrowserRouter>
   );
 }
