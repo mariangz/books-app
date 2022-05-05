@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Container from './Container';
 import SignupForm from './SignupForm/SignupForm';
 import Login from './Login/Login';
@@ -9,11 +9,13 @@ import './normalize.css';
 
 function App() {
   return (
-    <Container>
-      <Navbar />
-      <SignupForm />
-      <Footer />
-    </Container>
+    <BrowserRouter>
+      <Container>
+        <Navbar />
+        <SignupForm />
+        <Footer />
+      </Container>
+    </BrowserRouter>
   );
 }
 
