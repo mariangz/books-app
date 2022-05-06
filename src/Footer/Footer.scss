@@ -14,20 +14,14 @@ footer {
     margin-bottom: 1rem;
   }
 
-  ul {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   a {
     color: $color-grey-dark;
-    display: block;
     font-size: 0.8rem;
     font-weight: 300;
   }
 
-  a:hover,
-  span:hover {
-    text-decoration: underline;
+  ul {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   div:first-child {
@@ -73,9 +67,20 @@ ul {
       grid-template-columns: repeat(1, 1fr);
     }
 
-    div:nth-child(6) {
+    .cookies {
       grid-column: 1/-1;
+      align-items: center;
     }
+  }
+
+  .footer__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .first {
+    flex-direction: row;
   }
 }
 

@@ -1,11 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
 import './Footer.scss';
-
 export default function Footer() {
   return (
     <footer className='footer'>
-      <div className='footer__section'>
+      <div className='footer__section first'>
         <h6 className='footer__title'>Logo</h6>
         <ul>
           {['Facebook', 'Twitter', 'Youtube', 'Instagram'].map((item) => (
@@ -104,7 +103,7 @@ export default function Footer() {
           ))}
         </ul>
       </div>
-      <div className='footer__section'>
+      <div className='footer__section cookies'>
         <a className='footer__link'>Cookie settings</a>
       </div>
     </footer>
