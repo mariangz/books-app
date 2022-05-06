@@ -7,6 +7,7 @@
   display: flex;
   gap: 1.3rem;
 }
+
 legend {
   padding: 1rem;
 }
@@ -14,4 +15,9 @@ legend {
 .radio-input-container {
   display: flex;
   gap: 0.4rem;
+
+  label,
+  input {
+    cursor: pointer;
+  }
 }
