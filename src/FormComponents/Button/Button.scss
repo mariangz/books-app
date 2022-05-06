@@ -1,0 +1,12 @@
+@import '../../Variables.scss';
+
+.button {
+  background-color: $color-accent-second;
+  border: 1px solid $color-accent-second;
+  border-radius: $border-radius;
+  color: #fff;
+  cursor: pointer;
+  font-size: $font-size-medium;
+  outline: 1px solid $color-accent-second;
+  padding: 0.8rem 0.6rem;
+}

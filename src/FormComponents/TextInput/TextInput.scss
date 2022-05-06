@@ -1,0 +1,26 @@
+@import '../../Variables.scss';
+
+.input {
+  background-color: #fff;
+  border: 1px solid $color-grey-light;
+  border-radius: $border-radius;
+  display: block;
+  font-family: $font-main;
+  padding: 0.8rem;
+  width: 100%;
+
+  &.input-error.touched {
+    border: 1px solid $color-error;
+  }
+
+  &.success.touched {
+    border: 1px solid $color-success;
+  }
+}
+
+.label {
+  color: $color-grey;
+  display: block;
+  font-size: $font-size-min;
+  margin-bottom: 0.7rem;
+}

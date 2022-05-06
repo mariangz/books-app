@@ -1,0 +1,44 @@
+@import '../Variables.scss';
+
+.form {
+  padding: 4rem;
+  padding-bottom: 6rem;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  color: $color-grey;
+}
+
+.form__column,
+.form__names {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 300px;
+}
+
+.form__title {
+  font-size: $font-size-max;
+}
+
+.form__line {
+  margin-top: 1rem;
+}
+
+.input-container {
+  max-width: 300px;
+}
+
+.error {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: $color-error;
+}
+
+/* Media Queries */
+@media (min-width: $breakpoint-tablet) {
+  .form__names {
+    flex-direction: row;
+  }
+}

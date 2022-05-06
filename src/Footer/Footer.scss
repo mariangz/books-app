@@ -1,0 +1,97 @@
+@import '../Variables.scss';
+
+footer {
+  display: grid;
+  gap: 2rem 3rem;
+  grid-template-columns: 1fr;
+  line-height: 1.7;
+  max-width: 1200px;
+  padding: 1.5rem;
+
+  .title {
+    color: $color-blue;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  a {
+    color: $color-grey-dark;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 300;
+  }
+
+  a:hover,
+  span:hover {
+    text-decoration: underline;
+  }
+
+  div:first-child {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    ul {
+      display: flex;
+    }
+    span {
+      display: none;
+    }
+  }
+
+  div:nth-child(6) {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+ul {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+}
+
+/* Media Queries */
+@media (min-width: $breakpoint-tablet) {
+  footer {
+    grid-template-columns: repeat(4, 1fr);
+
+    div:first-child {
+      grid-column: 1/-1;
+      span {
+        display: inline-block;
+        font-size: 0.8rem;
+        padding-left: 10px;
+      }
+    }
+
+    ul {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    div:nth-child(6) {
+      grid-column: 1/-1;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-laptop) {
+  footer {
+    gap: 3rem 2.3rem;
+    grid-template-columns: repeat(5, 1fr);
+
+    div:first-child {
+      align-items: flex-start;
+      flex-direction: column;
+      grid-column: 1/2;
+      justify-content: flex-start;
+      ul {
+        flex-direction: column;
+      }
+    }
+  }
+}

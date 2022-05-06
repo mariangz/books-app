@@ -1,0 +1,18 @@
+@import '../../Variables.scss';
+
+.checkbox-container {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+
+  input,
+  label {
+    cursor: pointer;
+  }
+}
+
+label {
+  color: $color-grey;
+  flex-grow: 1;
+}

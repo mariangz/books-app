@@ -1,0 +1,23 @@
+@import '../../Variables.scss';
+
+.fieldset {
+  border: 1px solid $color-grey-light;
+  padding: 0.8rem;
+  width: 100%;
+  display: flex;
+  gap: 1.3rem;
+}
+
+legend {
+  padding: 1rem;
+}
+
+.radio-input-container {
+  display: flex;
+  gap: 0.4rem;
+
+  label,
+  input {
+    cursor: pointer;
+  }
+}
