@@ -21,11 +21,6 @@ export default function Password({ label, htmlFor, ...props }) {
       <label htmlFor={htmlFor} className='label'>
         {label}
       </label>
-      <div className='info-icon__container'>
-        {meta.touched && meta.error && (
-          <FontAwesomeIcon icon={regular('circle-question')} className='icon' />
-        )}
-      </div>
       <div className='password'>
         <input
           {...field}
@@ -46,9 +41,7 @@ export default function Password({ label, htmlFor, ...props }) {
         </span>
       </div>
 
-      {meta.touched && meta.error && (
-        <p className='error'>Password must include at least 8 characters.</p>
-      )}
+      {meta.touched && meta.error && <p className='error'>{meta.error}</p>}
     </div>
   );
 }
