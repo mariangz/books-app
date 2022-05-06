@@ -5,6 +5,11 @@
   display: flex;
   gap: 1rem;
   width: 100%;
+
+  input,
+  label {
+    cursor: pointer;
+  }
 }
 
 label {
