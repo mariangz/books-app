@@ -7,14 +7,38 @@ export default function Footer() {
       <div className='footer__section first'>
         <h6 className='footer__title'>Logo</h6>
         <ul>
-          {['Facebook', 'Twitter', 'Youtube', 'Instagram'].map((item) => (
+          {/* {['Facebook', 'Twitter', 'Youtube', 'Instagram'].map((item) => (
             <li key={item}>
-              <a classNxame='footer__link'>
+              <a classNaame='footer__link'>
                 <FontAwesomeIcon icon={brands('facebook')} />
                 <span>{item}</span>
               </a>
             </li>
-          ))}
+          ))} */}
+          <li>
+            <a classNaame='footer__link'>
+              <FontAwesomeIcon icon={brands('facebook')} />
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a classNaame='footer__link'>
+              <FontAwesomeIcon icon={brands('youtube')} />
+              <span>Youtube</span>
+            </a>
+          </li>
+          <li>
+            <a classNaame='footer__link'>
+              <FontAwesomeIcon icon={brands('instagram')} />
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a classNaame='footer__link'>
+              <FontAwesomeIcon icon={brands('twitter')} />
+              <span>Twitter</span>
+            </a>
+          </li>
         </ul>
       </div>
       <div className='footer__section'>
