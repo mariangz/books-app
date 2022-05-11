@@ -1,7 +1,7 @@
 import { useField } from 'formik';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import '../TextInput/TextInput.scss';
 import './Password.scss';
 import clsx from 'clsx';
