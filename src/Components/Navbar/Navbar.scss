@@ -40,3 +40,19 @@ header {
   color: black;
   width: 50px;
 }
+
+@media (min-width: $breakpoint-tablet) {
+  .main {
+    flex-direction: row;
+  }
+
+  .header__links {
+    margin: 0 3rem;
+  }
+}
+
+@media (min-width: $breakpoint-laptop) {
+  .header__links {
+    margin: 0 4rem;
+  }
+}
