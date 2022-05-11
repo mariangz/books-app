@@ -6,7 +6,7 @@ import reading from '../../images/reading.svg';
 
 export default function Main() {
   return (
-    <main>
+    <main className='main'>
       {/* {description.map((item) => (
         <div>
           <img src={'../../images/' + item.img + '.svg'} alt='' />
