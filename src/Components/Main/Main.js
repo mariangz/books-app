@@ -9,7 +9,7 @@ export default function Main() {
     <main className='main'>
       {/* {description.map((item) => (
         <div>
-          <img src={'../../images/' + item.img + '.svg'} alt='' />
+          <img src={item.img} alt='' />
           <h3>{item.title}</h3>
           <p>{item.text}</p>
         </div>
