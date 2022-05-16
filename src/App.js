@@ -5,6 +5,7 @@ import SignupForm from './Components/SignupForm/SignupForm';
 import Login from './Components/Login/Login';
 import Main from './Components/Main/Main';
 import Container from './Components/Container';
+import BookCard from './Components/BookCard/BookCard';
 import './App.scss';
 import './normalize.css';
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/signup' element={<SignupForm />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/card' element={<BookCard />} />
       </Routes>
       <Footer />
     </Container>
