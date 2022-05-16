@@ -28,11 +28,6 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-span:hover {
-  text-decoration: underline;
-}
-
 /* Media Queries */
 @media (min-width: $breakpoint-tablet) {
   footer {

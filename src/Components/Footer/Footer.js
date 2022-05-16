@@ -1,17 +1,19 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
 import './Footer.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { icons } from './listIcons';
+
 export default function Footer() {
+  console.log(icons[0].name);
   return (
     <footer className='footer'>
       <div className='footer__section first'>
         <h6 className='footer__title'>Logo</h6>
         <ul>
-          {['Facebook', 'Twitter', 'Youtube', 'Instagram'].map((item) => (
-            <li key={item}>
-              <a className='footer__link'>
-                <FontAwesomeIcon icon={brands('facebook')} />
-                <span>{item}</span>
+          {icons.map((item) => (
+            <li key={item.name}>
+              <a classNaame='footer__link' href=''>
+                <FontAwesomeIcon icon={item.icon} />
+                <span>{item.name}</span>
               </a>
             </li>
           ))}
