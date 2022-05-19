@@ -1,4 +1,5 @@
 import { Formik, Form } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import TextInput from '../FormComponents/TextInput/TextInput';
 import './SignupForm.scss';
@@ -10,7 +11,8 @@ import Radio from '../FormComponents/Radio/Radio';
 import Button from '../FormComponents/Button/Button';
 import { countryList } from '../FormComponents/Datalist/countryList';
 
-export default function SignupForm() {
+export default function SignupForm(props) {
+  const navigate = useNavigate();
   return (
     <Formik
       initialValues={{
@@ -54,6 +56,7 @@ export default function SignupForm() {
       })}
       onSubmit={(values) => {
         console.log(values);
+        navigate('/');
       }}
     >
       <Form className='form'>

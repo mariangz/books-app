@@ -1,11 +1,14 @@
 import { Formik, Form } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import TextInput from '../FormComponents/TextInput/TextInput';
 import Password from '../FormComponents/Password/Password';
 import Button from '../FormComponents/Button/Button';
 import '../SignupForm/SignupForm.scss';
 
-export default function Login() {
+export default function Login(props) {
+  const navigate = useNavigate();
+
   return (
     <Formik
       initialValues={{
@@ -22,7 +25,9 @@ export default function Login() {
           ),
       })}
       onSubmit={(values) => {
-        console.log(values);
+        // console.log(values);
+        props.handleUser(true);
+        navigate('/books');
       }}
     >
       <Form className='form'>
@@ -45,7 +50,7 @@ export default function Login() {
             name='password'
             id='password'
           />
-          <Button>Log in</Button>
+          <Button type='submit'>Log in</Button>
         </div>
       </Form>
     </Formik>
