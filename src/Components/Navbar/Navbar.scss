@@ -37,7 +37,9 @@ header {
 
 .search {
   color: black;
-  width: 50px;
+
+  .icon {
+  }
 }
 
 @media (min-width: $breakpoint-tablet) {
