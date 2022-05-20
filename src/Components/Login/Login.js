@@ -25,7 +25,6 @@ export default function Login(props) {
           ),
       })}
       onSubmit={(values) => {
-        // console.log(values);
         props.handleUser(true);
         navigate('/books');
       }}

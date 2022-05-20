@@ -23,10 +23,6 @@ export default function GridBooks(props) {
     searchParams.set('page', page);
 
     setSearchParams(searchParams);
-    // for (var pair of searchParams.entries()) {
-    //   console.log(pair[0] + ', ' + pair[1]);
-    // }
-    // console.log(searchParams.entries());
   }
 
   useEffect(() => {
