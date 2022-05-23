@@ -4,10 +4,13 @@ import * as Yup from 'yup';
 import TextInput from '../FormComponents/TextInput/TextInput';
 import Password from '../FormComponents/Password/Password';
 import Button from '../FormComponents/Button/Button';
+import { useContext } from 'react';
+import { ThemeContext } from '../../ThemeContext';
 import '../SignupForm/SignupForm.scss';
 
 export default function Login(props) {
   const navigate = useNavigate();
+  const context = useContext(ThemeContext);
 
   return (
     <Formik
@@ -26,6 +29,7 @@ export default function Login(props) {
       })}
       onSubmit={(values) => {
         props.handleUser(true);
+        context.setUser(values.name);
         navigate('/books');
       }}
     >

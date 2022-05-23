@@ -1,27 +1,27 @@
 import Loading from '../Loading/Loading';
 import BookCard from '../BookCard/BookCard';
-import './GridBooks.scss';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-// import { Navigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../../UserContext';
+import './GridBooks.scss';
 
 export default function GridBooks(props) {
-  // if (!props.user) {
-  //   console.log(props.user);
-  //   return <Navigate to='/login' replace />;
-  // }
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
   const [books, setBooks] = useState([]);
   const [page, setPage] = useState(1);
   let offSet = (page - 1) * 10;
+  const API_KEY = 'AIzaSyCUcZ7nXYWrMmXkuBXNROY3lF4bLzsKFhg';
+  const user = useContext(UserContext);
+
+  // if (!user) {
+  //   return <Navigate to='/login' replace />;
+  // }
 
   function nextPage() {
-    console.log(page);
     setPage((prevValue) => prevValue + 1);
-    console.log(page);
     searchParams.set('page', page);
-
     setSearchParams(searchParams);
   }
 
@@ -33,7 +33,6 @@ export default function GridBooks(props) {
     )
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
         setBooks(data.items);
       })
       .catch((error) => console.log(error))
@@ -43,7 +42,6 @@ export default function GridBooks(props) {
   }, [searchParams.get('search'), searchParams.get('page')]);
 
   useEffect(() => {
-    console.log(page);
     setPage(1);
   }, [searchParams.get('search')]);
 
@@ -53,7 +51,7 @@ export default function GridBooks(props) {
         {isLoading && <Loading />}
         {books && books.map((book) => <BookCard details={book} />)}
       </div>
-      <button onClick={nextPage}>Next</button>
+      <button onClick={nextPage}>{user}</button>
     </>
   );
 }

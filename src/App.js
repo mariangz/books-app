@@ -8,6 +8,8 @@ import Main from './Components/Main/Main';
 import Container from './Components/Container';
 import BookCard from './Components/BookCard/BookCard';
 import GridBooks from './Components/GridBooks/GridBooks';
+import { UserProvider } from './UserContext';
+import { ThemeProvider } from './ThemeContext';
 import './App.scss';
 import './normalize.css';
 
@@ -15,17 +17,19 @@ function App() {
   const [user, setUser] = useState(false);
 
   return (
-    <Container>
-      <Navbar user={user} />
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/signup' element={<SignupForm />} />
-        <Route path='/login' element={<Login handleUser={setUser} />} />
-        <Route path='/card' element={<BookCard />} />
-        <Route path='/books' element={<GridBooks user={user} />} />
-      </Routes>
-      <Footer />
-    </Container>
+    <ThemeProvider>
+      <Container>
+        <Navbar user={user} />
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='/signup' element={<SignupForm />} />
+          <Route path='/login' element={<Login handleUser={setUser} />} />
+          <Route path='/card' element={<BookCard />} />
+          <Route path='/books' element={<GridBooks user={user} />} />
+        </Routes>
+        <Footer />
+      </Container>
+    </ThemeProvider>
   );
 }
 

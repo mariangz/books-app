@@ -1,11 +1,19 @@
 import { NavLink, useSearchParams } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMagnifyingGlass,
+  faToggleOff,
+  faToggleOn,
+} from '@fortawesome/free-solid-svg-icons';
+import { useContext } from 'react';
+import { ThemeContext } from '../../ThemeContext';
+import clsx from 'clsx';
 import './Navbar.scss';
 
 export default function Navbar(props) {
   const [searchParams, setSearchParams] = useSearchParams();
+  const context = useContext(ThemeContext);
   return (
     <header>
       <div className='header__container'>
@@ -17,7 +25,7 @@ export default function Navbar(props) {
               </NavLink>
             </li>
 
-            <li>
+            {/* <li>
               <div className='search'>
                 <input
                   type='search'
@@ -35,16 +43,32 @@ export default function Navbar(props) {
                   <FontAwesomeIcon className='icon' icon={faMagnifyingGlass} />
                 </button>
               </div>
+            </li> */}
+            <li>
+              <button className='toggle' onClick={context.toggleTheme}>
+                {context.theme === 'dark' ? (
+                  <FontAwesomeIcon className='icon' icon={faToggleOff} />
+                ) : (
+                  <FontAwesomeIcon className='icon' icon={faToggleOn} />
+                )}
+              </button>
             </li>
 
             <li className='link'>
-              <NavLink to='signup' className='button'>
-                Signup
-              </NavLink>
+              {!context.user && (
+                <NavLink to='signup' className='button'>
+                  Signup
+                </NavLink>
+              )}
+              {context.user && <h3>Hi, {context.user}</h3>}
             </li>
             <li className='link'>
-              <NavLink to='login' className='login'>
-                Log in
+              <NavLink
+                to={context.user ? '/' : '/login'}
+                onClick={context.setUser('')}
+                className={clsx({ button: context.user, login: !context.user })}
+              >
+                {context.user ? 'Log out' : 'Log in'}
               </NavLink>
             </li>
           </ul>

@@ -1,3 +1,12 @@
+import { useContext } from 'react';
+import { ThemeContext } from '../ThemeContext';
+import clsx from 'clsx';
+
 export default function Container({ children }) {
-  return <div className='container'>{children}</div>;
+  const context = useContext(ThemeContext);
+  return (
+    <div className={clsx({ container: true, dark: context.theme === 'dark' })}>
+      {children}
+    </div>
+  );
 }
