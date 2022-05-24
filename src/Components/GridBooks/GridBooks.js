@@ -15,6 +15,7 @@ export default function GridBooks(props) {
   const [books, setBooks] = useState([]);
   const [page, setPage] = useState(1);
   let offSet = (page - 1) * 10;
+  const API_KEY = 'AIzaSyCUcZ7nXYWrMmXkuBXNROY3lF4bLzsKFhg';
 
   function nextPage() {
     console.log(page);
