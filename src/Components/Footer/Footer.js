@@ -1,12 +1,9 @@
 import './Footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icons } from './iconsList';
-import { useContext } from 'react';
-import { ThemeContext } from '../../ThemeContext';
 import clsx from 'clsx';
 
 export default function Footer() {
-  const context = useContext(ThemeContext);
   return (
     <footer className='footer'>
       <div className='footer__section first'>

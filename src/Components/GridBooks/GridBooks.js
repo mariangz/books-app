@@ -6,18 +6,14 @@ import { useContext } from 'react';
 import { UserContext } from '../../UserContext';
 import './GridBooks.scss';
 
-export default function GridBooks(props) {
+export default function GridBooks() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
   const [books, setBooks] = useState([]);
   const [page, setPage] = useState(1);
   let offSet = (page - 1) * 10;
   const API_KEY = 'AIzaSyCUcZ7nXYWrMmXkuBXNROY3lF4bLzsKFhg';
-  const user = useContext(UserContext);
-
-  // if (!user) {
-  //   return <Navigate to='/login' replace />;
-  // }
+  const [user, setUser] = useContext(UserContext);
 
   function nextPage() {
     setPage((prevValue) => prevValue + 1);
@@ -45,13 +41,18 @@ export default function GridBooks(props) {
     setPage(1);
   }, [searchParams.get('search')]);
 
+  // if (!user) {
+  //   return <Navigate to='/login' replace />;
+  // }
   return (
     <>
       <div className='gridBooks'>
         {isLoading && <Loading />}
         {books && books.map((book) => <BookCard details={book} />)}
       </div>
-      <button onClick={nextPage}>{user}</button>
+      <button onClick={nextPage} className='button'>
+        Next
+      </button>
     </>
   );
 }

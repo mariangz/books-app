@@ -19,6 +19,21 @@ header {
   margin: 0 2rem;
 }
 
+.search {
+  input {
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid gray;
+  }
+
+  button {
+    background-color: #fff;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
 .push {
   margin-right: auto;
 }

@@ -5,12 +5,12 @@ import TextInput from '../FormComponents/TextInput/TextInput';
 import Password from '../FormComponents/Password/Password';
 import Button from '../FormComponents/Button/Button';
 import { useContext } from 'react';
-import { ThemeContext } from '../../ThemeContext';
+import { UserContext } from '../../UserContext';
 import '../SignupForm/SignupForm.scss';
 
 export default function Login(props) {
   const navigate = useNavigate();
-  const context = useContext(ThemeContext);
+  const [user, setUser] = useContext(UserContext);
 
   return (
     <Formik
@@ -28,8 +28,8 @@ export default function Login(props) {
           ),
       })}
       onSubmit={(values) => {
-        props.handleUser(true);
-        context.setUser(values.name);
+        console.log(values);
+        setUser(values.email);
         navigate('/books');
       }}
     >

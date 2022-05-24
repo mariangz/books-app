@@ -7,13 +7,15 @@ import {
   faToggleOn,
 } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
-import { ThemeContext } from '../../ThemeContext';
+import { UserContext } from '../../UserContext';
 import clsx from 'clsx';
 import './Navbar.scss';
 
 export default function Navbar(props) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const context = useContext(ThemeContext);
+  const [user, setUser] = useContext(UserContext);
+  console.log(user);
+
   return (
     <header>
       <div className='header__container'>
@@ -25,7 +27,7 @@ export default function Navbar(props) {
               </NavLink>
             </li>
 
-            {/* <li>
+            <li>
               <div className='search'>
                 <input
                   type='search'
@@ -43,33 +45,33 @@ export default function Navbar(props) {
                   <FontAwesomeIcon className='icon' icon={faMagnifyingGlass} />
                 </button>
               </div>
-            </li> */}
-            <li>
-              <button className='toggle' onClick={context.toggleTheme}>
-                {context.theme === 'dark' ? (
-                  <FontAwesomeIcon className='icon' icon={faToggleOff} />
-                ) : (
-                  <FontAwesomeIcon className='icon' icon={faToggleOn} />
-                )}
-              </button>
             </li>
 
             <li className='link'>
-              {!context.user && (
+              {!user && (
                 <NavLink to='signup' className='button'>
                   Signup
                 </NavLink>
               )}
-              {context.user && <h3>Hi, {context.user}</h3>}
+              {user && <h3>Hi, {user}</h3>}
             </li>
             <li className='link'>
-              <NavLink
-                to={context.user ? '/' : '/login'}
-                onClick={context.setUser('')}
-                className={clsx({ button: context.user, login: !context.user })}
-              >
-                {context.user ? 'Log out' : 'Log in'}
-              </NavLink>
+              {user ? (
+                <NavLink
+                  to='/'
+                  className={clsx({ button: user, login: !user })}
+                  onClick={setUser('')}
+                >
+                  Log out
+                </NavLink>
+              ) : (
+                <NavLink
+                  to='/login'
+                  className={clsx({ button: user, login: user })}
+                >
+                  Log in
+                </NavLink>
+              )}
             </li>
           </ul>
         </nav>

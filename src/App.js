@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Route, Routes, useSearchParams } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
@@ -8,28 +7,28 @@ import Main from './Components/Main/Main';
 import Container from './Components/Container';
 import BookCard from './Components/BookCard/BookCard';
 import GridBooks from './Components/GridBooks/GridBooks';
+import { UserContext } from './UserContext';
 import { UserProvider } from './UserContext';
-import { ThemeProvider } from './ThemeContext';
+import { useContext } from 'react';
 import './App.scss';
 import './normalize.css';
-
 function App() {
-  const [user, setUser] = useState(false);
+  // const [user, setUser] = useContext(UserContext);
 
   return (
-    <ThemeProvider>
+    <UserProvider>
       <Container>
-        <Navbar user={user} />
+        <Navbar />
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/signup' element={<SignupForm />} />
-          <Route path='/login' element={<Login handleUser={setUser} />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/card' element={<BookCard />} />
-          <Route path='/books' element={<GridBooks user={user} />} />
+          <Route path='/books' element={<GridBooks />} />
         </Routes>
         <Footer />
       </Container>
-    </ThemeProvider>
+    </UserProvider>
   );
 }
 
