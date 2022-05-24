@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/mariangz/books-app/static/css/main.57ecc4b8.css",
-    "main.js": "/mariangz/books-app/static/js/main.5b4e79f6.js",
+    "main.css": "/mariangz/books-app/static/css/main.17792010.css",
+    "main.js": "/mariangz/books-app/static/js/main.225d336b.js",
     "static/media/logo.svg": "/mariangz/books-app/static/media/logo.d5edc257544d8355f8ed6b41d9854dd1.svg",
     "static/media/reading.svg": "/mariangz/books-app/static/media/reading.78982198bcf75be99d42a6f15e55622b.svg",
     "static/media/arrange.svg": "/mariangz/books-app/static/media/arrange.c95f6d343626e385dd826bbb58c6ecac.svg",
     "static/media/pileOfBook.svg": "/mariangz/books-app/static/media/pileOfBook.c07c83dcf4f818e33f22a1a26474968d.svg",
     "static/media/loading.svg": "/mariangz/books-app/static/media/loading.5537fe94aa1ed0541aee1ab85f051828.svg",
     "index.html": "/mariangz/books-app/index.html",
-    "main.57ecc4b8.css.map": "/mariangz/books-app/static/css/main.57ecc4b8.css.map",
-    "main.5b4e79f6.js.map": "/mariangz/books-app/static/js/main.5b4e79f6.js.map"
+    "main.17792010.css.map": "/mariangz/books-app/static/css/main.17792010.css.map",
+    "main.225d336b.js.map": "/mariangz/books-app/static/js/main.225d336b.js.map"
   },
   "entrypoints": [
-    "static/css/main.57ecc4b8.css",
-    "static/js/main.5b4e79f6.js"
+    "static/css/main.17792010.css",
+    "static/js/main.225d336b.js"
   ]
 }
