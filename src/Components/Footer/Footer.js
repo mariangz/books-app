@@ -1,9 +1,8 @@
 import './Footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { icons } from './listIcons';
+import { icons } from './iconsList';
 
 export default function Footer() {
-  console.log(icons[0].name);
   return (
     <footer className='footer'>
       <div className='footer__section first'>

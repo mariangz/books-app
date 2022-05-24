@@ -1,1 +1,21 @@
 @import '../../Variables.scss';
+
+.bookCard {
+  display: flex;
+  width: 280px;
+  gap: 1rem;
+
+  .coverImg {
+    width: 128px;
+    height: 160px;
+    display: block;
+  }
+
+  .text {
+    width: 150px;
+
+    .author {
+      margin-bottom: 1rem;
+    }
+  }
+}
