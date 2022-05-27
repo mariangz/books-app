@@ -8,29 +8,24 @@ import Container from './Components/Container';
 import ProtectedRoute from './Components/ProtectedRoute';
 import BookCard from './Components/BookCard/BookCard';
 import GridBooks from './Components/GridBooks/GridBooks';
-import { UserProvider } from './UserContext';
-import { UserContext } from './UserContext';
-import { useContext } from 'react';
 
 import './App.scss';
 import './normalize.css';
 function App() {
   return (
-    <UserProvider>
-      <Container>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Main />} />
-          <Route path='/signup' element={<SignupForm />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/card' element={<BookCard />} />
-          <Route element={<ProtectedRoute />}>
-            <Route path='/books' element={<GridBooks />} />
-          </Route>
-        </Routes>
-        <Footer />
-      </Container>
-    </UserProvider>
+    <Container>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/signup' element={<SignupForm />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/card' element={<BookCard />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path='/books' element={<GridBooks />} />
+        </Route>
+      </Routes>
+      <Footer />
+    </Container>
   );
 }
 
