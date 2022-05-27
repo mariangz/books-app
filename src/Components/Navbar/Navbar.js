@@ -1,11 +1,7 @@
 import { NavLink, useSearchParams } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faMagnifyingGlass,
-  faToggleOff,
-  faToggleOn,
-} from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 import { UserContext } from '../../UserContext';
 import clsx from 'clsx';
@@ -14,8 +10,9 @@ import './Navbar.scss';
 export default function Navbar(props) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [user, setUser] = useContext(UserContext);
-  console.log(user);
-
+  function logout() {
+    setUser('');
+  }
   return (
     <header>
       <div className='header__container'>
@@ -27,25 +24,30 @@ export default function Navbar(props) {
               </NavLink>
             </li>
 
-            <li>
-              <div className='search'>
-                <input
-                  type='search'
-                  value={searchParams.get('search') || ''}
-                  onChange={(event) => {
-                    let search = event.target.value;
-                    if (search) {
-                      setSearchParams({ search });
-                    } else {
-                      setSearchParams({});
-                    }
-                  }}
-                />
-                <button onClick={props.onSearchClick}>
-                  <FontAwesomeIcon className='icon' icon={faMagnifyingGlass} />
-                </button>
-              </div>
-            </li>
+            {user && (
+              <li>
+                <div className='search'>
+                  <input
+                    type='search'
+                    value={searchParams.get('search') || ''}
+                    onChange={(event) => {
+                      let search = event.target.value;
+                      if (search) {
+                        setSearchParams({ search });
+                      } else {
+                        setSearchParams({});
+                      }
+                    }}
+                  />
+                  <button onClick={props.onSearchClick}>
+                    <FontAwesomeIcon
+                      className='icon'
+                      icon={faMagnifyingGlass}
+                    />
+                  </button>
+                </div>
+              </li>
+            )}
 
             <li className='link'>
               {!user && (
@@ -60,7 +62,7 @@ export default function Navbar(props) {
                 <NavLink
                   to='/'
                   className={clsx({ button: user, login: !user })}
-                  onClick={setUser('')}
+                  onClick={logout}
                 >
                   Log out
                 </NavLink>
