@@ -2,8 +2,6 @@ import Loading from '../Loading/Loading';
 import BookCard from '../BookCard/BookCard';
 import { useSearchParams, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useContext } from 'react';
-import { UserContext } from '../../UserContext';
 import './GridBooks.scss';
 
 export default function GridBooks() {
@@ -13,7 +11,6 @@ export default function GridBooks() {
   const [page, setPage] = useState(1);
   let offSet = (page - 1) * 10;
   const API_KEY = 'AIzaSyCUcZ7nXYWrMmXkuBXNROY3lF4bLzsKFhg';
-  const [user, setUser] = useContext(UserContext);
 
   function nextPage() {
     setPage((prevValue) => prevValue + 1);
@@ -41,9 +38,6 @@ export default function GridBooks() {
     setPage(1);
   }, [searchParams.get('search')]);
 
-  // if (!user) {
-  //   return <Navigate to='/login' replace />;
-  // }
   return (
     <>
       <div className='gridBooks'>
