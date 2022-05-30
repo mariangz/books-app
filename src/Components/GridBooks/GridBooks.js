@@ -1,6 +1,6 @@
 import Loading from '../Loading/Loading';
 import BookCard from '../BookCard/BookCard';
-import { useSearchParams, Navigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './GridBooks.scss';
 
