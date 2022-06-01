@@ -1,4 +1,4 @@
-import { Route, Routes, useSearchParams } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import SignupForm from './Components/SignupForm/SignupForm';
