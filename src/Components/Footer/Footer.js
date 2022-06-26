@@ -11,7 +11,7 @@ export default function Footer() {
         <ul>
           {icons.map((item) => (
             <li key={item.name}>
-              <a classNaame='footer__link' href=''>
+              <a className='footer__link' href=''>
                 <FontAwesomeIcon icon={item.icon} />
                 <span>{item.name}</span>
               </a>
