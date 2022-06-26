@@ -44,7 +44,7 @@ export default function SignupForm(props) {
         password: Yup.string()
           .required('Required')
           .matches(
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+            /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
             'Must contain 8 characters, at least one uppercase, one lowercase , one number and one special character'
           ),
         confirmPassword: Yup.string()
