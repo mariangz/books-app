@@ -9,8 +9,8 @@ import ProtectedRoute from './Components/ProtectedRoute';
 import BookCard from './Components/BookCard/BookCard';
 import GridBooks from './Components/GridBooks/GridBooks';
 
-import './App.scss';
 import './normalize.css';
+import './App.scss';
 function App() {
   return (
     <Container>
