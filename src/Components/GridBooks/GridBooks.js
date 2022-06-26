@@ -42,7 +42,8 @@ export default function GridBooks() {
     <>
       <div className='gridBooks'>
         {isLoading && <Loading />}
-        {books && books.map((book) => <BookCard details={book} />)}
+        {books &&
+          books.map((book, index) => <BookCard details={book} key={index} />)}
       </div>
       <button onClick={nextPage} className='button'>
         Next
