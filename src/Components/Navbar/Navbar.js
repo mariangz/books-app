@@ -20,7 +20,7 @@ export default function Navbar(props) {
           <ul className='header__links'>
             <li className='hero-logo push link'>
               <NavLink to='../'>
-                <img class='logo' src={logo} alt='' />
+                <img className='logo' src={logo} alt='' />
               </NavLink>
             </li>
 
