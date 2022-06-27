@@ -11,9 +11,8 @@ export default function GridBooks() {
   const [page, setPage] = useState(1);
   const paramsSearch = searchParams.get('search');
   const paramsPage = searchParams.get('page');
-
-  let offSet = (page - 1) * 10;
   const API_KEY = 'AIzaSyCUcZ7nXYWrMmXkuBXNROY3lF4bLzsKFhg';
+  let offSet = (page - 1) * 10;
 
   function nextPage() {
     setPage((prevValue) => prevValue + 1);
@@ -43,8 +42,8 @@ export default function GridBooks() {
 
   return (
     <>
+      {isLoading && <Loading />}
       <div className='gridBooks'>
-        {isLoading && <Loading />}
         {books &&
           books.map((book, index) => <BookCard details={book} key={index} />)}
       </div>
