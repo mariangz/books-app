@@ -10,9 +10,11 @@ import './Navbar.scss';
 export default function Navbar(props) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [user, setUser] = useContext(UserContext);
+
   function logout() {
     setUser('');
   }
+
   return (
     <header>
       <div className='header__container'>

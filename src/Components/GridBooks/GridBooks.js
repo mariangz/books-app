@@ -1,8 +1,10 @@
 import Loading from '../Loading/Loading';
 import BookCard from '../BookCard/BookCard';
+import Button from '../../Components/FormComponents/Button/Button';
 import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './GridBooks.scss';
+import clsx from 'clsx';
 
 export default function GridBooks() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -13,11 +15,18 @@ export default function GridBooks() {
   const paramsSearch = searchParams.get('search');
   const paramsPage = searchParams.get('page');
   const API_KEY = 'AIzaSyCUcZ7nXYWrMmXkuBXNROY3lF4bLzsKFhg';
+
   let offSet = (page - 1) * 10;
 
-  console.log(books);
   function nextPage() {
     setPage((prevValue) => prevValue + 1);
+    searchParams.set('page', page);
+    setSearchParams(searchParams);
+    console.log(searchParams.get(page));
+  }
+
+  function previousPage() {
+    setPage((prevValue) => prevValue - 1);
     searchParams.set('page', page);
     setSearchParams(searchParams);
   }
@@ -61,9 +70,22 @@ export default function GridBooks() {
                 <BookCard details={book} key={index} />
               ))}
           </div>
-          <button onClick={nextPage} className='button'>
-            Next
-          </button>
+          <div className='btn-container'>
+            <button
+              onClick={previousPage}
+              disabled={offSet === 0}
+              className={clsx({
+                button: offSet !== 0,
+                page: offSet !== 0,
+                disabled: offSet === 0,
+              })}
+            >
+              Previous
+            </button>
+            <button onClick={nextPage} className='button page'>
+              Next
+            </button>
+          </div>
         </>
       )}
     </>
