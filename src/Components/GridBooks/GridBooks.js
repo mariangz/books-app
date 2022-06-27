@@ -9,6 +9,9 @@ export default function GridBooks() {
   const [isLoading, setIsLoading] = useState(true);
   const [books, setBooks] = useState([]);
   const [page, setPage] = useState(1);
+  const paramsSearch = searchParams.get('search');
+  const paramsPage = searchParams.get('page');
+
   let offSet = (page - 1) * 10;
   const API_KEY = 'AIzaSyCUcZ7nXYWrMmXkuBXNROY3lF4bLzsKFhg';
 
@@ -32,11 +35,11 @@ export default function GridBooks() {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [searchParams.get('search'), searchParams.get('page')]);
+  }, [paramsSearch, paramsPage]);
 
   useEffect(() => {
     setPage(1);
-  }, [searchParams.get('search')]);
+  }, [paramsSearch]);
 
   return (
     <>
