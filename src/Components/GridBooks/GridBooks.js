@@ -6,14 +6,16 @@ import './GridBooks.scss';
 
 export default function GridBooks() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [books, setBooks] = useState([]);
   const [page, setPage] = useState(1);
+  const [empty, setEmpty] = useState(true);
   const paramsSearch = searchParams.get('search');
   const paramsPage = searchParams.get('page');
   const API_KEY = 'AIzaSyCUcZ7nXYWrMmXkuBXNROY3lF4bLzsKFhg';
   let offSet = (page - 1) * 10;
 
+  console.log(books);
   function nextPage() {
     setPage((prevValue) => prevValue + 1);
     searchParams.set('page', page);
@@ -34,6 +36,12 @@ export default function GridBooks() {
       .finally(() => {
         setIsLoading(false);
       });
+
+    if (!books) {
+      setEmpty(true);
+    } else {
+      setEmpty(false);
+    }
   }, [paramsSearch, paramsPage]);
 
   useEffect(() => {
@@ -43,13 +51,21 @@ export default function GridBooks() {
   return (
     <>
       {isLoading && <Loading />}
-      <div className='gridBooks'>
-        {books &&
-          books.map((book, index) => <BookCard details={book} key={index} />)}
-      </div>
-      <button onClick={nextPage} className='button'>
-        Next
-      </button>
+      {empty ? (
+        <p>Sorry, we didn't find any book</p>
+      ) : (
+        <>
+          <div className='gridBooks'>
+            {books &&
+              books.map((book, index) => (
+                <BookCard details={book} key={index} />
+              ))}
+          </div>
+          <button onClick={nextPage} className='button'>
+            Next
+          </button>
+        </>
+      )}
     </>
   );
 }
