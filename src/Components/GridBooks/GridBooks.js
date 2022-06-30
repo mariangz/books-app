@@ -1,6 +1,5 @@
 import Loading from '../Loading/Loading';
 import BookCard from '../BookCard/BookCard';
-import Button from '../../Components/FormComponents/Button/Button';
 import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './GridBooks.scss';
@@ -20,17 +19,18 @@ export default function GridBooks() {
 
   function nextPage() {
     setPage((prevValue) => prevValue + 1);
+  }
+
+  useEffect(() => {
     searchParams.set('page', page);
     setSearchParams(searchParams);
-    console.log(searchParams.get(page));
-  }
+  }, [page]);
 
   function previousPage() {
     setPage((prevValue) => prevValue - 1);
     searchParams.set('page', page);
     setSearchParams(searchParams);
   }
-
   useEffect(() => {
     fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${searchParams.get(
