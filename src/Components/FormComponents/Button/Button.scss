@@ -9,4 +9,8 @@
   font-size: $font-size-medium;
   outline: 1px solid $color-accent-second;
   padding: 0.8rem 0.6rem;
+
+  &.page {
+    width: 9rem;
+  }
 }
