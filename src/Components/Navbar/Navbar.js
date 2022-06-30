@@ -2,7 +2,7 @@ import { NavLink, useSearchParams } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../../UserContext';
 import clsx from 'clsx';
 import './Navbar.scss';
@@ -14,6 +14,16 @@ export default function Navbar(props) {
   function logout() {
     setUser('');
   }
+
+  const updateSearch = (event) => {
+    let search = event.target.value;
+    console.log(search);
+    if (search) {
+      setSearchParams({ search });
+    } else {
+      setSearchParams({});
+    }
+  };
 
   return (
     <header>
@@ -32,14 +42,7 @@ export default function Navbar(props) {
                   <input
                     type='search'
                     value={searchParams.get('search') || ''}
-                    onChange={(event) => {
-                      let search = event.target.value;
-                      if (search) {
-                        setSearchParams({ search });
-                      } else {
-                        setSearchParams({});
-                      }
-                    }}
+                    onChange={updateSearch}
                   />
                   <button onClick={props.onSearchClick}>
                     <FontAwesomeIcon
